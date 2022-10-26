@@ -1,3 +1,9 @@
+import EditIcon from '@mui/icons-material/Edit';
+import ClearIcon from '@mui/icons-material/Clear';
+
+
+
+
 // function DynamicTable({ TableData }) {
 //   // get table column
 //   const column = Object.keys(TableData[0]);
@@ -73,7 +79,15 @@ const DynamicTable = ({ data, column }) => {
 };
 
 const TableHeadItem = ({ item }) => <th>{item.heading}</th>;
-const TableRow = ({ item, column }) => (
+const TableRow = ({ item, column }) =>{
+  
+  const handleDelete = ()=>{
+
+    
+  }
+  
+  
+  return(
   <tr>
     {column.map((columnItem, index) => {
       if (columnItem.value.includes("image")) {
@@ -84,9 +98,30 @@ const TableRow = ({ item, column }) => (
         );
       }
 
+      if (columnItem.value.includes("delete")) {
+        return (
+          <td key={index}>
+            <ClearIcon onClick={handleDelete} />
+          </td>
+        );
+      }
+
+      if (columnItem.value.includes("edit")) {
+        return (
+          <td key={index}>
+             <EditIcon/>
+          </td>
+        );
+      }
+
       return <td key={index}>{item[columnItem.value]}</td>;
     })}
   </tr>
 );
+
+}
+
+
+
 
 export default DynamicTable;

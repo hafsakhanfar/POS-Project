@@ -22,7 +22,7 @@ body {
 }
 
 .pagesLink {
-  width: 1.5%;
+  width: 3%;
   height: 100%;
   display: flex;
   gap: 2rem;
@@ -34,4 +34,20 @@ body {
   left: 0%;
   position: fixed;
   z-index: 1;
+}
+table {
+  border-collapse: collapse;
+  max-width: 900px;
+  width: 100%;
+  margin: 2rem auto;
+}
+table th,
+table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+img {
+  width: 20px;
+  height: 30px;
+  object-fit: contain;
 }

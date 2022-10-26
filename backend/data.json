@@ -1,0 +1,42 @@
+{
+  "products": [
+    {
+      "id": "0",
+      "name": "milk",
+      "code": "92646461361",
+      "catagory": "food",
+      "image": "https://cdn.pixabay.com/photo/2017/01/27/11/54/milk-bottle-2012800_960_720.png",
+      "price": 9
+    },
+    {
+      "id": "1666475755651",
+      "name": "hello a",
+      "code": "efw",
+      "catagory": "ewf",
+      "image": "wef",
+      "price": "1"
+    },
+    {
+      "id": "1666476080454",
+      "name": "oouou",
+      "code": "efwwww",
+      "catagory": "wef",
+      "image": "ef",
+      "price": "2"
+    },
+    {
+      "id": "1666476132258",
+      "name": "iuh",
+      "code": "ef",
+      "catagory": "lewkf",
+      "image": "eoih",
+      "price": "1"
+    }
+  ],
+  "catagories": [
+    {
+      "name": "food",
+      "id": "635465468"
+    }
+  ]
+}

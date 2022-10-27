@@ -4,7 +4,7 @@ import DynamicTable from "../layout/DynamicTable";
 import axios from "axios";
 import Modal from "../Modal";
 import { useFormik } from "formik";
-import EditableRow from "../layout/EditableRow";
+import EditableRow from "../layout/EditableProductRow";
 function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);

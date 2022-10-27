@@ -46,7 +46,7 @@
       "code": "w",
       "category": "145",
       "image": "wqd",
-      "price": 2
+      "price": 69
     },
     {
       "id": "1666835851841",
@@ -59,8 +59,12 @@
   ],
   "categories": [
     {
-      "name": "food",
-      "id": "635465468"
+      "id": "1666861386410",
+      "name": "makeUp"
+    },
+    {
+      "id": "1666861460971",
+      "name": "food"
     }
   ]
 }

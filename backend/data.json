@@ -1,79 +1,63 @@
 {
   "products": [
     {
-      "id": "0",
-      "name": "milk",
-      "code": "92646461361",
-      "catagory": "food",
-      "image": "https://cdn.pixabay.com/photo/2017/01/27/11/54/milk-bottle-2012800_960_720.png",
-      "price": 9
+      "id": "1666827443029",
+      "name": "alknfla",
+      "code": "awf",
+      "category": "af",
+      "image": "https://cdn.salla.sa/dPPYd/3jkJqtP2wOlZFbSKYhHVH4TIqse13Yvsk4Oyp7eS.png",
+      "price": 3
     },
     {
-      "id": "1666475755651",
-      "name": "hello a",
-      "code": "efw",
-      "catagory": "ewf",
+      "id": "1666827476072",
+      "name": "eswfw",
+      "code": "wefw",
+      "category": "ewfw",
+      "image": "ewf",
+      "price": 6
+    },
+    {
+      "id": "1666832670682",
+      "name": "knl",
+      "code": "kih",
+      "category": "kuh",
+      "image": "j",
+      "price": 5
+    },
+    {
+      "id": "1666832926144",
+      "name": "sdc",
+      "code": "ewf",
+      "category": "wef",
       "image": "wef",
-      "price": "1"
+      "price": 3
     },
     {
-      "id": "1666476080454",
-      "name": "oouou",
-      "code": "efwwww",
-      "catagory": "wef",
-      "image": "ef",
-      "price": "2"
-    },
-    {
-      "id": "1666476132258",
-      "name": "iuh",
-      "code": "ef",
-      "catagory": "lewkf",
-      "image": "eoih",
-      "price": "1"
-    },
-    {
-      "id": "1666821202746",
-      "name": "wkhr",
-      "code": "werw",
-      "catagory": "ewrw",
-      "image": "werww",
-      "price": 11
-    },
-    {
-      "id": "1666821207040",
-      "name": "wkhr",
-      "code": "werw",
-      "catagory": "ewrw",
-      "image": "werww",
-      "price": 11
-    },
-    {
-      "id": "1666821271474",
-      "name": "werw",
-      "code": "ewr",
-      "catagory": "ewr",
-      "image": "ewr",
+      "id": "1666835849101",
+      "name": "ih",
+      "code": "w",
+      "category": "145",
+      "image": "wqd",
       "price": 1
     },
     {
-      "id": "1666821577648",
-      "name": "werf",
-      "code": "e",
-      "catagory": "ew",
-      "image": "ew",
+      "id": "1666835849634",
+      "name": "ih",
+      "code": "w",
+      "category": "145",
+      "image": "wqd",
       "price": 2
     },
     {
-      "id": "1666821736408",
-      "name": "s",
-      "code": "bs",
-      "catagory": "dfsbfsb",
-      "image": "sbdvds",
-      "price": 1
+      "id": "1666835851841",
+      "name": "ih",
+      "code": "w",
+      "category": "145",
+      "image": "wqd",
+      "price": 2
     }
   ],
-  "catagories": [
+  "categories": [
     {
       "name": "food",
       "id": "635465468"

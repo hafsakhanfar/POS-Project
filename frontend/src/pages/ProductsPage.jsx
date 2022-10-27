@@ -4,21 +4,21 @@ import DynamicTable from "../layout/DynamicTable";
 import axios from "axios";
 import Modal from "../Modal";
 import { useFormik } from "formik";
+import EditableRow from "../layout/EditableRow";
 function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
-
   const formik = useFormik({
     initialValues: {
       name: "",
       code: "",
-      catagory: "",
+      category: "",
       image: "",
       price: "",
     },
     onSubmit: (values) => {
-      fetch("http://localhost:5000/products", {
+      fetch("products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json; charset=UTF-8",
@@ -48,96 +48,100 @@ function ProductsPage() {
     { heading: "", value: "delete" },
     { heading: "Name", value: "name" },
     { heading: "Product Code", value: "code" },
-    { heading: "Catagory", value: "catagory" },
+    { heading: "Category", value: "category" },
     { heading: "Image", value: "image" },
     { heading: "Price", value: "price" },
     { heading: "", value: "edit" },
   ];
 
-  const handleSubmit = (event)=>{
+  const handleSubmit = (event) => {
     event.preventDefault();
     formik.handleSubmit();
+    reRenderTableData();
+  };
 
+  const reRenderTableData = () => {
     fetchProducts();
-  }
+  };
+
   return (
-    <div>
-      
-        <div style={{ margin: 50 }}>
-          <button onClick={toggleShowModal}>add product</button>{" "}
-        </div>
-        
-        {showModal ? (
-          <Modal>
-            
-              <form onSubmit={handleSubmit}>
-                <label>
-                  name:
-                  <input
-                    type="text"
-                    name="name"
-                    onChange={formik.handleChange}
-                    value={formik.values.firstName}
-                  />
-                </label>
+    <MainLayout>
+      <div style={{ margin: 50 }}>
+        <button onClick={toggleShowModal}>add product</button>{" "}
+      </div>
 
-                <label>
-                  Code:
-                  <input
-                    type="text"
-                    name="code"
-                    onChange={formik.handleChange}
-                    value={formik.values.firstName}
-                  />
-                </label>
+      {showModal ? (
+        <Modal>
+          <form onSubmit={handleSubmit}>
+            <label>
+              name:
+              <input
+                type="text"
+                name="name"
+                onChange={formik.handleChange}
+                value={formik.values.name}
+              />
+            </label>
 
-                <label>
-                  catagory:
-                  <input
-                    type="text"
-                    name="catagory"
-                    onChange={formik.handleChange}
-                    value={formik.values.firstName}
-                  />
-                </label>
-                <label>
-                  image:
-                  <input
-                    type="text"
-                    name="image"
-                    onChange={formik.handleChange}
-                    value={formik.values.firstName}
-                  />
-                </label>
-                <label>
-                  price:
-                  <input
-                    type="number"
-                    name="price"
-                    onChange={formik.handleChange}
-                    value={formik.values.firstName}
-                  />
-                </label>
-                <button type="submit">Submit</button>
-                <button className="button" onClick={toggleShowModal}>
-                CANCEL
-              </button>
-              </form>
-            
-          </Modal>
-        ) : null}
+            <label>
+              Code:
+              <input
+                type="text"
+                name="code"
+                onChange={formik.handleChange}
+                value={formik.values.code}
+              />
+            </label>
 
-        <div>
-          {isLoading ? (
-            "Loading"
-          ) : (
-            <DynamicTable data={products} column={column} />
-          )}
-        </div>
+            <label>
+              catagory:
+              <input
+                type="text"
+                name="category"
+                onChange={formik.handleChange}
+                value={formik.values.category}
+              />
+            </label>
+            <label>
+              image:
+              <input
+                type="text"
+                name="image"
+                onChange={formik.handleChange}
+                value={formik.values.image}
+              />
+            </label>
+            <label>
+              price:
+              <input
+                type="number"
+                name="price"
+                onChange={formik.handleChange}
+                value={formik.values.price}
+              />
+            </label>
+            <button type="submit">Submit</button>
+            <button className="button" onClick={toggleShowModal}>
+              CANCEL
+            </button>
+          </form>
+        </Modal>
+      ) : null}
 
-        
-     
-    </div>
+      <div>
+        {isLoading ? (
+          "Loading"
+        ) : (
+          <DynamicTable
+            data={products}
+            column={column}
+            dataName="products"
+            reRenderTableData={reRenderTableData}
+            EditableRow={EditableRow}
+          />
+        )}
+      </div>
+    </MainLayout>
   );
 }
 

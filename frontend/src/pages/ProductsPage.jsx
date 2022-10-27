@@ -9,6 +9,9 @@ function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
+const [filteredData, setFilteredData] = useState([])
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -34,12 +37,27 @@ function ProductsPage() {
     setIsLoading(true);
     const result = await axios.get("products");
     setProducts(await result.data);
+    setFilteredData(await result.data);
     setIsLoading(false);
+    
   };
 
   useEffect(() => {
     fetchProducts().catch((err) => console.log(err));
+    
   }, []);
+
+  useEffect(() => {
+    setFilteredData(products);
+    const data = products.filter((product) => {
+      if (searchInput === "") return product;
+      else if (product.name.includes(searchInput)) {
+        return product;
+      }
+    });
+    setFilteredData(data);
+  }, [searchInput]);
+
   const toggleShowModal = () => {
     setShowModal(!showModal);
   };
@@ -67,7 +85,13 @@ function ProductsPage() {
   return (
     <MainLayout>
       <div style={{ margin: 50 }}>
-        <button onClick={toggleShowModal}>add product</button>{" "}
+        <button onClick={toggleShowModal}>add product</button>
+        <input
+          className="search"
+          placeholder="Search..."
+          onChange={(e) => setSearchInput(e.target.value.toLowerCase())}
+          value={searchInput}
+        />
       </div>
 
       {showModal ? (
@@ -133,7 +157,7 @@ function ProductsPage() {
           "Loading"
         ) : (
           <DynamicTable
-            data={products}
+            data={filteredData}
             column={column}
             dataName="products"
             reRenderTableData={reRenderTableData}

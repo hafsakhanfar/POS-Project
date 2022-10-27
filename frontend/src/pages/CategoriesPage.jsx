@@ -11,6 +11,8 @@ function CategoriesPage() {
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredData, setFilteredData] = useState([]);
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -32,6 +34,7 @@ function CategoriesPage() {
     setIsLoading(true);
     const result = await axios.get("categories");
     setCategories(await result.data);
+    setFilteredData(await result.data);
     setIsLoading(false);
   };
 
@@ -41,6 +44,17 @@ function CategoriesPage() {
   const toggleShowModal = () => {
     setShowModal(!showModal);
   };
+
+  useEffect(() => {
+    setFilteredData(categories);
+    const data = categories.filter((category) => {
+      if (searchInput === "") return category;
+      else if (category.name.includes(searchInput)) {
+        return category;
+      }
+    });
+    setFilteredData(data);
+  }, [searchInput]);
 
   const column = [
     { heading: "", value: "delete" },
@@ -58,51 +72,54 @@ function CategoriesPage() {
     fetchCategories();
   };
 
+  return (
+    <MainLayout>
+      <div style={{ margin: 50 }}>
+        <button onClick={toggleShowModal}>add category</button>
+        <input
+          className="search"
+          placeholder="Search..."
+          onChange={(e) => setSearchInput(e.target.value.toLowerCase())}
+          value={searchInput}
+        />
+      </div>
 
+      {showModal ? (
+        <Modal>
+          <form onSubmit={handleSubmit}>
+            <label>
+              name:
+              <input
+                type="text"
+                name="name"
+                onChange={formik.handleChange}
+                value={formik.values.name}
+              />
+            </label>
 
- return (
- <MainLayout>
-  <div style={{ margin: 50 }}>
-    <button onClick={toggleShowModal}>add category</button>{" "}
-  </div>
+            <button type="submit">Submit</button>
+            <button className="button" onClick={toggleShowModal}>
+              CANCEL
+            </button>
+          </form>
+        </Modal>
+      ) : null}
 
-  {showModal ? (
-    <Modal>
-      <form onSubmit={handleSubmit}>
-        <label>
-          name:
-          <input
-            type="text"
-            name="name"
-            onChange={formik.handleChange}
-            value={formik.values.name}
+      <div>
+        {isLoading ? (
+          "Loading"
+        ) : (
+          <DynamicTable
+            data={filteredData}
+            column={column}
+            dataName="categories"
+            reRenderTableData={reRenderTableData}
+            EditableRow={EditableRow}
           />
-        </label>
-
-        
-        <button type="submit">Submit</button>
-        <button className="button" onClick={toggleShowModal}>
-          CANCEL
-        </button>
-      </form>
-    </Modal>
-  ) : null}
-
-  <div>
-    {isLoading ? (
-      "Loading"
-    ) : (
-      <DynamicTable
-        data={categories}
-        column={column}
-        dataName="categories"
-        reRenderTableData={reRenderTableData}
-        EditableRow={EditableRow}
-      />
-    )}
-  </div>
-</MainLayout>
-);
+        )}
+      </div>
+    </MainLayout>
+  );
 }
 
 export default CategoriesPage;

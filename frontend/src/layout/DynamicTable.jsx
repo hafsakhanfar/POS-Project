@@ -1,7 +1,8 @@
 import EditIcon from "@mui/icons-material/Edit";
 import ClearIcon from "@mui/icons-material/Clear";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useMemo } from "react";
+import Pagination from "./pagination/Pagination";
 
 // function DynamicTable({ TableData }) {
 //   // get table column
@@ -65,28 +66,45 @@ const DynamicTable = ({
   reRenderTableData,
   EditableRow,
 }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const currentTableData = useMemo(() => {
+    const firstPageIndex = (currentPage - 1) * 6;
+    const lastPageIndex = firstPageIndex + 6;
+    return data.slice(firstPageIndex, lastPageIndex);
+  }, [currentPage, data]);
+
   return (
-    <table>
-      <thead>
-        <tr>
-          {column.map((item, index) => (
-            <TableHeadItem item={item} key={index} />
+    <>
+      <table>
+        <thead>
+          <tr>
+            {column.map((item, index) => (
+              <TableHeadItem item={item} key={index} />
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {currentTableData.map((item) => (
+            <TableRow
+              item={item}
+              column={column}
+              key={item.id}
+              dataName={dataName}
+              reRenderTableData={reRenderTableData}
+              EditableRow={EditableRow}
+            />
           ))}
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((item) => (
-          <TableRow
-            item={item}
-            column={column}
-            key={item.id}
-            dataName={dataName}
-            reRenderTableData={reRenderTableData}
-            EditableRow={EditableRow}
-          />
-        ))}
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+      <Pagination
+        className="pagination-bar"
+        currentPage={currentPage}
+        totalCount={data.length}
+        pageSize={6}
+        onPageChange={(page) => setCurrentPage(page)}
+      />
+    </>
   );
 };
 

@@ -48,9 +48,39 @@ table td {
   padding: 8px;
   width: auto;
 }
-img {
-  width: 20px;
-  height: 30px;
+.productImage {
+  width: 50px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.productsContainer {
+  width: 50%;
+  height: 50%;
+  max-width: 50%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 10px;
+  margin: 500;
+  left: 10%;
+}
+.categoriesContainer {
+  width: 50%;
+  max-width: 50%;
+  display: flex;
+  overflow-x: scroll;
+  gap: 10px;
+  left: 10%;
+}
+.categoryBox {
+  width: 80px;
+  height: 60px;
+  background-color: aquamarine;
+}
+
+.posProduct {
+  width: 80px;
+  height: 60px;
   object-fit: contain;
 }
 

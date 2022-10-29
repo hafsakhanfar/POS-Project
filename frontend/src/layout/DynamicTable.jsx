@@ -150,7 +150,11 @@ const TableRow = ({
           if (columnItem.value.includes("image")) {
             return (
               <td key={index}>
-                <img placeholder="hi" src={item[columnItem.value]} />
+                <img
+                  className="productImage"
+                  placeholder={item.name}
+                  src={item[columnItem.value]}
+                />
               </td>
             );
           }

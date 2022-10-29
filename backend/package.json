@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "json-server": "^0.17.0"
+    "json-server": "^0.17.0",
+    "react-select": "^5.5.7"
   }
 }

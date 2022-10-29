@@ -28,6 +28,7 @@ function CategoriesPage() {
           ...values,
         }),
       });
+      reRenderTableData();
     },
   });
   const fetchCategories = async () => {
@@ -65,7 +66,6 @@ function CategoriesPage() {
   const handleSubmit = (event) => {
     event.preventDefault();
     formik.handleSubmit();
-    reRenderTableData();
   };
 
   const reRenderTableData = () => {

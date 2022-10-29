@@ -3,14 +3,15 @@ import MainLayout from "../layout/MainLayout";
 import DynamicTable from "../layout/DynamicTable";
 import axios from "axios";
 import Modal from "../Modal";
-import { useFormik } from "formik";
+import { Form, useFormik, Field, FormikProps } from "formik";
 import EditableRow from "../layout/EditableProductRow";
 function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [searchInput, setSearchInput] = useState("");
-const [filteredData, setFilteredData] = useState([])
+  const [filteredData, setFilteredData] = useState([]);
+  const [categories, setCategories] = useState([]);
 
   const formik = useFormik({
     initialValues: {
@@ -31,6 +32,7 @@ const [filteredData, setFilteredData] = useState([])
           ...values,
         }),
       });
+      reRenderTableData();
     },
   });
   const fetchProducts = async () => {
@@ -39,16 +41,13 @@ const [filteredData, setFilteredData] = useState([])
     setProducts(await result.data);
     setFilteredData(await result.data);
     setIsLoading(false);
-    
   };
 
   useEffect(() => {
     fetchProducts().catch((err) => console.log(err));
-    
   }, []);
 
   useEffect(() => {
-    setFilteredData(products);
     const data = products.filter((product) => {
       if (searchInput === "") return product;
       else if (product.name.includes(searchInput)) {
@@ -82,10 +81,18 @@ const [filteredData, setFilteredData] = useState([])
     fetchProducts();
   };
 
+  const fetchCategories = async () => {
+    const result = await axios.get("categories");
+    setCategories(await result.data);
+  };
+  const handleAddClick = async () => {
+    fetchCategories().then(toggleShowModal());
+  };
+
   return (
     <MainLayout>
       <div style={{ margin: 50 }}>
-        <button onClick={toggleShowModal}>add product</button>
+        <button onClick={handleAddClick}>add product</button>
         <input
           className="search"
           placeholder="Search..."
@@ -116,15 +123,21 @@ const [filteredData, setFilteredData] = useState([])
                 value={formik.values.code}
               />
             </label>
-
             <label>
-              catagory:
-              <input
-                type="text"
-                name="category"
-                onChange={formik.handleChange}
-                value={formik.values.category}
-              />
+              category:
+              {categories.length !== 0 ? (
+                <select
+                  onChange={formik.handleChange}
+                  value={formik.values.category}
+                  name="category"
+                >
+                  {categories.map((category) => (
+                    <option>{category.name}</option>
+                  ))}
+                </select>
+              ) : (
+                "loading"
+              )}
             </label>
             <label>
               image:

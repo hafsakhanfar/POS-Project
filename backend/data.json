@@ -2,222 +2,54 @@
   "products": [
     {
       "id": "1666827443029",
-      "name": "alknfla",
+      "name": "af",
       "code": "awf",
-      "category": "af",
+      "category": "a",
       "image": "https://cdn.salla.sa/dPPYd/3jkJqtP2wOlZFbSKYhHVH4TIqse13Yvsk4Oyp7eS.png",
       "price": 3
     },
     {
       "id": "1666827476072",
-      "name": "eswfw",
+      "name": "a",
       "code": "wefw",
-      "category": "ewfw",
-      "image": "ewf",
+      "category": "a",
+      "image": "https://assets.vogue.com/photos/6254709ef4d32274a826f91f/1:1/w_2667,h_2667,c_limit/slide_2%20(2).jpg",
       "price": 6
     },
     {
       "id": "1666863549989",
-      "name": "erhwlkefwewf",
+      "name": "c",
       "code": "wefkwef",
-      "category": "fewf",
-      "image": "wef",
+      "category": "c",
+      "image": "https://i.guim.co.uk/img/media/7d2ecb94383d9ed419aa9cbcc79ccba66cb8faca/0_176_3872_2323/master/3872.jpg?width=700&quality=85&auto=format&fit=max&s=25102e285d3f6fe44ba2f3b8b9ddaf7a",
       "price": 66
     },
     {
       "id": "1666865616210",
-      "name": "ewqfr",
+      "name": "b",
       "code": "4t",
-      "category": "43t",
-      "image": "53t",
+      "category": "b",
+      "image": "https://pa.namshicdn.com/product/21/9873/v5/2-web-desktop-list.jpg",
       "price": 2
     },
     {
       "id": "1666865617907",
-      "name": "ewqfr",
+      "name": "b",
       "code": "4t",
-      "category": "43t",
+      "category": "b",
       "image": "53t",
       "price": 3
     },
     {
       "id": "1666865618681",
-      "name": "ewqfr",
+      "name": "c",
       "code": "4t",
-      "category": "43t",
+      "category": "c",
       "image": "53t",
       "price": 3
     },
     {
       "id": "1666865619646",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865620490",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865621335",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865622159",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865623014",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865623778",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865624627",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865625399",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865626273",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865627039",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865627924",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865628543",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865629341",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865630018",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865630849",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865631542",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865632379",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865633090",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865633894",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865634540",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865645626",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
-    },
-    {
-      "id": "1666865648609",
       "name": "ewqfr",
       "code": "4t",
       "category": "43t",
@@ -236,55 +68,31 @@
     },
     {
       "id": "1666865694409",
-      "name": "ewf"
+      "name": "drinks"
     },
     {
       "id": "1666865698278",
-      "name": "ewfwef"
+      "name": "f"
     },
     {
       "id": "1666865698657",
-      "name": "ewfwef"
+      "name": "c"
     },
     {
       "id": "1666865699439",
-      "name": "ewfwef"
+      "name": "a"
     },
     {
       "id": "1666865699963",
-      "name": "ewfwef"
+      "name": "bb"
     },
     {
-      "id": "1666865700685",
-      "name": "ewfwef"
+      "id": "1667074346427",
+      "name": "cc"
     },
     {
-      "id": "1666865701223",
-      "name": "ewfwef"
-    },
-    {
-      "id": "1666865702036",
-      "name": "ewfwef"
-    },
-    {
-      "id": "1666865702568",
-      "name": "ewfwef"
-    },
-    {
-      "id": "1666865703436",
-      "name": "ewfwef"
-    },
-    {
-      "id": "1666865703934",
-      "name": "ewfwef"
-    },
-    {
-      "id": "1666865705975",
-      "name": "ewfwef"
-    },
-    {
-      "id": "1666865706358",
-      "name": "ewfwef"
+      "id": "1667074475924",
+      "name": "ff"
     }
   ]
 }

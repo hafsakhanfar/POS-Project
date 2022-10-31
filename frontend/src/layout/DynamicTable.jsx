@@ -66,13 +66,21 @@ const DynamicTable = ({
   reRenderTableData,
   EditableRow,
 }) => {
+  // const [currentPage, setCurrentPage] = useState(1);
+  // const firstPageIndex = (currentPage - 1) * 6;
+  // const lastPageIndex = firstPageIndex + 6;
+  // const currentTableData = data.slice(firstPageIndex, lastPageIndex);
+  
   const [currentPage, setCurrentPage] = useState(1);
+  const indexOfLastRecord = currentPage * 6;
+  const indexOfFirstRecord = indexOfLastRecord - 6;
+  const currentRecords = data.slice(
+    indexOfFirstRecord,
+    indexOfLastRecord
+  );
+  const nPages = Math.ceil(data.length / 6);
 
-  const currentTableData = useMemo(() => {
-    const firstPageIndex = (currentPage - 1) * 6;
-    const lastPageIndex = firstPageIndex + 6;
-    return data.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage, data]);
+  
 
   return (
     <>
@@ -85,7 +93,7 @@ const DynamicTable = ({
           </tr>
         </thead>
         <tbody>
-          {currentTableData.map((item) => (
+          {currentRecords.map((item) => (
             <TableRow
               item={item}
               column={column}
@@ -95,15 +103,14 @@ const DynamicTable = ({
               EditableRow={EditableRow}
             />
           ))}
+          <Pagination
+        nPages={nPages}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+      />
         </tbody>
       </table>
-      <Pagination
-        className="pagination-bar"
-        currentPage={currentPage}
-        totalCount={data.length}
-        pageSize={6}
-        onPageChange={(page) => setCurrentPage(page)}
-      />
+      
     </>
   );
 };

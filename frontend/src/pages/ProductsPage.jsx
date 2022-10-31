@@ -12,7 +12,7 @@ function ProductsPage() {
   const [searchInput, setSearchInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [categories, setCategories] = useState([]);
-
+  
   const formik = useFormik({
     initialValues: {
       name: "",

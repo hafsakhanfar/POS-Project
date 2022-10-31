@@ -6,10 +6,11 @@ function CategoriesContainer({ categories, setFilterValue }) {
   };
   return (
     <div className="categoriesContainer">
-      {categories.map((category) => {
+      {categories.map((category, index) => {
         return (
           <div
             className="categoryBox"
+            key={index}
             onClick={() => {
               handleCategoryClick(category.name);
             }}

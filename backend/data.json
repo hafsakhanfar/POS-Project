@@ -55,6 +55,70 @@
       "category": "43t",
       "image": "53t",
       "price": 3
+    },
+    {
+      "id": "1667245682493",
+      "name": "a",
+      "code": "a",
+      "category": "",
+      "image": "a",
+      "price": 2
+    },
+    {
+      "id": "1667245683303",
+      "name": "a",
+      "code": "a",
+      "category": "",
+      "image": "a",
+      "price": 2
+    },
+    {
+      "id": "1667245684356",
+      "name": "a",
+      "code": "a",
+      "category": "",
+      "image": "a",
+      "price": 2
+    },
+    {
+      "id": "1667245685267",
+      "name": "a",
+      "code": "a",
+      "category": "",
+      "image": "a",
+      "price": 2
+    },
+    {
+      "id": "1667245686561",
+      "name": "a",
+      "code": "a",
+      "category": "",
+      "image": "a",
+      "price": 2
+    },
+    {
+      "id": "1667245687623",
+      "name": "a",
+      "code": "a",
+      "category": "",
+      "image": "a",
+      "price": 2
+    },
+    {
+      "id": "1667245688596",
+      "name": "a",
+      "code": "a",
+      "category": "",
+      "image": "a",
+      "price": 2
+    },
+    {
+      "id": "1667248279626",
+      "name": "f",
+      "code": "s",
+      "category": "",
+      "image": "https://www.ikea.com/sa/en/images/products/nordviken-bar-table-black__0714197_pe729961_s5.jpg?f=xxs",
+      "price": 3
     }
   ],
   "categories": [
@@ -93,6 +157,18 @@
     {
       "id": "1667074475924",
       "name": "ff"
+    },
+    {
+      "id": "1667248504014",
+      "name": "Beds"
+    },
+    {
+      "id": "1667248761273",
+      "name": "Chairs"
+    },
+    {
+      "id": "1667248784869",
+      "name": "Children's furniture"
     }
   ]
 }

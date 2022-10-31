@@ -1,13 +1,18 @@
 import React from "react";
 
-function ProductsContainer({ products }) {
+function ProductsContainer({ products, handleProductClick }) {
   return (
     <div className="productsContainer">
       {products.map((product, index) => {
         return (
-          <div key={index}>
+          <div
+            key={index}
+            onClick={() => {
+              handleProductClick(product);
+            }}
+          >
             <figure>
-              <img src={product.image} className="posProduct" />
+              <img src={product.image} className="posProduct" alt={product.name} />
               <figcaption>{product.name}</figcaption>
             </figure>
           </div>

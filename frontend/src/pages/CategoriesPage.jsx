@@ -8,7 +8,6 @@ import { useFormik } from "formik";
 import EditableRow from "../layout/EditableCategoryRow";
 import styles from "../style/productsAndCategoryPages.module.css";
 
-
 function CategoriesPage() {
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -19,7 +18,7 @@ function CategoriesPage() {
     initialValues: {
       name: "",
     },
-    onSubmit: (values , {resetForm}) => {
+    onSubmit: (values, { resetForm }) => {
       fetch("categories", {
         method: "POST",
         headers: {
@@ -31,7 +30,7 @@ function CategoriesPage() {
         }),
       });
       reRenderTableData();
-      resetForm({values : ''})
+      resetForm({ values: "" });
     },
   });
   const fetchCategories = async () => {
@@ -56,10 +55,10 @@ function CategoriesPage() {
       else if (category.name.toLowerCase().includes(searchInput)) {
         return category;
       }
-      return null ;
+      return null;
     });
     setFilteredData(data);
-  }, [searchInput , categories]);
+  }, [searchInput, categories]);
 
   const column = [
     { heading: "", value: "delete" },
@@ -78,7 +77,7 @@ function CategoriesPage() {
 
   return (
     <MainLayout>
-       <div className={styles.header}>
+      <div className={styles.header}>
         <h2>Categories</h2>
       </div>
       <div className={styles.subHeader}>
@@ -89,7 +88,7 @@ function CategoriesPage() {
       </div>
       <div className={styles.searchDiv}>
         <input
-        className={styles.searchInput}
+          className={styles.searchInput}
           name="search"
           placeholder="Search..."
           onChange={(e) => setSearchInput(e.target.value.toLowerCase())}

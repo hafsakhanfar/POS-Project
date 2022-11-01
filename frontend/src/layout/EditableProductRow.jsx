@@ -1,7 +1,17 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { useFormik } from "formik";
-
+import axios from "axios";
 const EditableRow = ({ editFormData, handleEditForm, handleCancelClick }) => {
+  const [categories, setCategories] = useState([]);
+
+  const fetchCategories = async () => {
+    const result = await axios.get("categories");
+    setCategories(await result.data);
+  };
+  useEffect(() => {
+    fetchCategories();
+  }, []);
+
   const formik = useFormik({
     initialValues: {
       name: editFormData.name,
@@ -26,6 +36,16 @@ const EditableRow = ({ editFormData, handleEditForm, handleCancelClick }) => {
         <input
           type="text"
           required="required"
+          placeholder="Enter an image..."
+          name="image"
+          onChange={formik.handleChange}
+          value={formik.values.image}
+        ></input>
+      </td>
+      <td>
+        <input
+          type="text"
+          required="required"
           placeholder="Enter a name..."
           name="name"
           onChange={formik.handleChange}
@@ -43,28 +63,21 @@ const EditableRow = ({ editFormData, handleEditForm, handleCancelClick }) => {
         ></input>
       </td>
       <td>
-        <input
-          type="text"
-          required="required"
-          placeholder="Enter a category..."
-          name="category"
+        <select
           onChange={formik.handleChange}
           value={formik.values.category}
-        ></input>
+          name="category"
+        >
+          <option></option>
+          {categories.map((category) => (
+            <option>{category.name}</option>
+          ))}
+        </select>
       </td>
+
       <td>
         <input
           type="text"
-          required="required"
-          placeholder="Enter an image..."
-          name="image"
-          onChange={formik.handleChange}
-          value={formik.values.image}
-        ></input>
-      </td>
-      <td>
-        <input
-          type="number"
           required="required"
           placeholder="Enter an price..."
           name="price"

@@ -1,163 +1,207 @@
 {
   "products": [
     {
-      "id": "1666827443029",
-      "name": "af",
-      "code": "awf",
-      "category": "a",
-      "image": "https://cdn.salla.sa/dPPYd/3jkJqtP2wOlZFbSKYhHVH4TIqse13Yvsk4Oyp7eS.png",
-      "price": 3
+      "id": "1667256153107",
+      "image": "https://www.ikea.com/sa/en/images/products/idanaes-upholstered-bed-frame-gunnared-dark-grey__0953726_pe802891_s5.jpg?f=l",
+      "name": "Double bed",
+      "code": "653215328",
+      "category": "Beds",
+      "price": "120"
     },
     {
-      "id": "1666827476072",
-      "name": "a",
-      "code": "wefw",
-      "category": "a",
-      "image": "https://assets.vogue.com/photos/6254709ef4d32274a826f91f/1:1/w_2667,h_2667,c_limit/slide_2%20(2).jpg",
-      "price": 6
+      "id": "1667256263440",
+      "image": "https://www.ikea.com/sa/en/images/products/skubb-storage-case-white__0910098_pe559907_s5.jpg?f=xl",
+      "name": "Under bed storage",
+      "code": "653215986",
+      "category": "Beds",
+      "price": "5"
     },
     {
-      "id": "1666863549989",
-      "name": "c",
-      "code": "wefkwef",
-      "category": "c",
-      "image": "https://i.guim.co.uk/img/media/7d2ecb94383d9ed419aa9cbcc79ccba66cb8faca/0_176_3872_2323/master/3872.jpg?width=700&quality=85&auto=format&fit=max&s=25102e285d3f6fe44ba2f3b8b9ddaf7a",
-      "price": 66
+      "id": "1667256553045",
+      "image": "https://www.ikea.com/sa/en/images/products/gammalbyn-3-seat-sofa-beige__0868906_pe781416_s5.jpg?f=xl",
+      "name": "Fabric sofas",
+      "code": "568965321",
+      "category": "Sofas",
+      "price": "153"
     },
     {
-      "id": "1666865616210",
-      "name": "b",
-      "code": "4t",
-      "category": "b",
-      "image": "https://pa.namshicdn.com/product/21/9873/v5/2-web-desktop-list.jpg",
-      "price": 2
+      "id": "4575521456321",
+      "image": "https://secure.img1-fg.wfcdn.com/im/25166994/compr-r85/1783/178315146/hakes-upholstered-wingback-chair.jpg",
+      "name": "Jose Monque",
+      "code": "235683215",
+      "category": "Chairs",
+      "price": 160
     },
     {
-      "id": "1666865617907",
-      "name": "b",
-      "code": "4t",
-      "category": "b",
-      "image": "53t",
-      "price": 3
+      "id": "653582",
+      "image": "https://cdn.shopify.com/s/files/1/2536/5012/products/82105-25-SW-P1-KO_1fa452ed-b897-43c1-82bb-2cab4ba0759e_1800x.jpg?v=1643907393",
+      "name": "Albaro Masel",
+      "code": "235683215",
+      "category": "Chairs",
+      "price": 150
     },
     {
-      "id": "1666865618681",
-      "name": "c",
-      "code": "4t",
-      "category": "c",
-      "image": "53t",
-      "price": 3
+      "id": "6537752",
+      "image": "https://s3files.core77.com/blog/images/870389_88977_83354_AwhZg7mbW.jpg",
+      "name": "OverBeers Stool",
+      "code": "235683215",
+      "category": "Chairs",
+      "price": "119"
     },
     {
-      "id": "1666865619646",
-      "name": "ewqfr",
-      "code": "4t",
-      "category": "43t",
-      "image": "53t",
-      "price": 3
+      "id": "6452532",
+      "image": "https://i0.wp.com/watanimall.com/wp-content/uploads/2020/12/Armor-S-Royal.png?resize=300%2C300&ssl=1",
+      "name": "Forne Sanno",
+      "code": "235683215",
+      "category": "Chairs",
+      "price": 140
     },
     {
-      "id": "1667245682493",
-      "name": "a",
-      "code": "a",
-      "category": "",
-      "image": "a",
-      "price": 2
+      "id": "65332152",
+      "image": "https://i5.walmartimages.com/asr/470660b4-932b-4169-8c11-668c3843b28d.c37d2bcaabc5ed06973d7f0367e8a0e7.jpeg?odnHeight=450&odnWidth=450&odnBg=ffffff",
+      "name": "Adoro",
+      "code": "235683215",
+      "category": "Chairs",
+      "price": 160.3
     },
     {
-      "id": "1667245683303",
-      "name": "a",
-      "code": "a",
-      "category": "",
-      "image": "a",
-      "price": 2
+      "id": "65313132",
+      "image": "https://www.arteriorshome.com/media/catalog/product/cache/844e04d5832413b4f91e6e8660eed22a/5/6/5671.d1.jpg",
+      "name": "Newton Candid",
+      "code": "235683215",
+      "category": "chairs",
+      "price": 260
     },
     {
-      "id": "1667245684356",
-      "name": "a",
-      "code": "a",
-      "category": "",
-      "image": "a",
-      "price": 2
+      "id": "65321532",
+      "image": "https://img.edilportale.com/product-thumbs/b_TITANO-Dining-table-ENNE-580610-rel3eabf0b2.jpg",
+      "name": "Manzioni Real",
+      "code": "235683215",
+      "category": "Tables",
+      "price": 270
     },
     {
-      "id": "1667245685267",
-      "name": "a",
-      "code": "a",
-      "category": "",
-      "image": "a",
-      "price": 2
+      "id": "631532",
+      "image": "https://ii.worldmarket.com/fcgi-bin/iipsrv.fcgi?FIF=/images/worldmarket/source/98778_XXX_v1.tif&wid=480&cvt=jpeg",
+      "name": "Cienna",
+      "code": "235683215",
+      "category": "Tables",
+      "price": 230
     },
     {
-      "id": "1667245686561",
-      "name": "a",
-      "code": "a",
-      "category": "",
-      "image": "a",
-      "price": 2
+      "id": "6533212",
+      "image": "https://essentialhome.eu/images/products/product-page/casegoods/alberto-dining-table/alberto-dining-table-2.png",
+      "name": "Alberto",
+      "code": "235683215",
+      "category": "Tables",
+      "price": 399.9
     },
     {
-      "id": "1667245687623",
-      "name": "a",
-      "code": "a",
-      "category": "",
-      "image": "a",
-      "price": 2
+      "id": "65351332",
+      "image": "https://s3.amazonaws.com/sierraimages/Images/Product/Large/13200_2_.jpg",
+      "name": "Pontevedra",
+      "code": "235683215",
+      "category": "Tables",
+      "price": 170
     },
     {
-      "id": "1667245688596",
-      "name": "a",
-      "code": "a",
-      "category": "",
-      "image": "a",
-      "price": 2
+      "id": "655651332",
+      "image": "https://m.media-amazon.com/images/I/81EWYw8Kg+L.jpg",
+      "name": "Vivianna",
+      "code": "235683215",
+      "category": "Sofas",
+      "price": 331
     },
     {
-      "id": "1667248279626",
-      "name": "f",
-      "code": "s",
-      "category": "",
-      "image": "https://www.ikea.com/sa/en/images/products/nordviken-bar-table-black__0714197_pe729961_s5.jpg?f=xxs",
-      "price": 3
+      "id": "6536532",
+      "image": "https://ak1.ostkcdn.com/images/products/is/images/direct/1259f98c5997186285f11b98f11094d8db287355/Velvet-Sofa-Couch-with-2-Pillows-Modern-3-Seater-Sofa-with-Wood-Legs.jpg",
+      "name": "Estrella Bordeaux",
+      "code": "235683215",
+      "category": "Sofas",
+      "price": 149.9
+    },
+    {
+      "id": "653153132",
+      "image": "https://a.1stdibscdn.com/machalke-valentino-leather-sofa-dark-brown-three-seater-for-sale-picture-8/22569652/f_220853221610434676039/machalke_valentino_leder_sofa_dunkelbraun_dreisitzer_15177_8v5QJ6ZP_master.jpg",
+      "name": "Valentino Carmini",
+      "code": "235683215",
+      "category": "Sofas",
+      "price": 400
+    },
+    {
+      "id": "65355312",
+      "image": "https://secure.img1-cg.wfcdn.com/im/49504072/resize-h310-w310%5Ecompr-r85/1345/134563164/Geter+165Cm+H+x+62Cm+W+Steel+Standard+Bookcase.jpg",
+      "name": "Larage Dechamp",
+      "code": "235683215",
+      "category": "Bookcases",
+      "price": 200
+    },
+    {
+      "id": "65351352",
+      "image": "https://i.pinimg.com/736x/84/7d/bd/847dbd2d4e43c18b585ef783801a0583.jpg",
+      "name": "Alma Maters",
+      "code": "235683215",
+      "category": "Bookcases",
+      "price": 126
+    },
+    {
+      "id": "65335132",
+      "image": "https://img.edilportale.com/product-thumbs/b_SEBASTIAN-Meridiani-244456-reld96b10c8.jpg",
+      "name": "Sebastian",
+      "code": "235683215",
+      "category": "Bookcases",
+      "price": 420
+    },
+    {
+      "id": "653351312",
+      "image": "https://ii1.pepperfry.com/media/catalog/product/s/w/800x880/swank-book-shelf-swank-book-shelf-9hfhhz.jpg",
+      "name": "La Paz",
+      "code": "235683215",
+      "category": "Bookcases",
+      "price": 79
+    },
+    {
+      "id": "6533513112",
+      "image": "https://cdn.shopify.com/s/files/1/0268/7516/6775/products/Liana-Wall-_-Ceiling-Light-Aqua-Creations-Studio-1655828807.jpg?v=1658829760",
+      "name": "Liana",
+      "code": "235683215",
+      "category": "Lights",
+      "price": 78
+    },
+    {
+      "id": "653256546",
+      "image": "https://s3-eu-west-1.amazonaws.com/nedgis/public/images/products/plafonnier-cup-cake-susy-led-2700k-noir-blanc-o11cm-h11-5cm-dark/square_imgs/plafonnier-cup-cake-susy-led-2700k-noir-blanc-o11cm-h11-5cm-dark-normal.jpg?1488475523",
+      "name": "Lil Susy",
+      "code": "235683215",
+      "category": "Lights",
+      "price": 60
+    },
+    {
+      "id": "631531532",
+      "image": "https://cdn.shopify.com/s/files/1/0225/2528/0331/products/h261806-agb_1_1_2000x.jpg?v=1588370226",
+      "name": "Briggitte",
+      "code": "235683215",
+      "category": "Lights",
+      "price": 120
+    },
+    {
+      "id": "65356512",
+      "image": "data:image/jpeg;base64,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",
+      "name": "Albaro Loco",
+      "code": "235683215",
+      "category": "mirrors",
+      "price": 94
+    },
+    {
+      "id": "6535516352",
+      "image": "https://www.ikea.com/om/en/images/products/lassbyn-table-mirror-silver-colour__1061323_pe850368_s5.jpg?f=s",
+      "name": "Tristezza",
+      "code": "235683215",
+      "category": "mirrors",
+      "price": 330
     }
   ],
   "categories": [
-    {
-      "id": "1666861386410",
-      "name": "makeUp"
-    },
-    {
-      "id": "1666861460971",
-      "name": "food"
-    },
-    {
-      "id": "1666865694409",
-      "name": "drinks"
-    },
-    {
-      "id": "1666865698278",
-      "name": "f"
-    },
-    {
-      "id": "1666865698657",
-      "name": "c"
-    },
-    {
-      "id": "1666865699439",
-      "name": "a"
-    },
-    {
-      "id": "1666865699963",
-      "name": "bb"
-    },
-    {
-      "id": "1667074346427",
-      "name": "cc"
-    },
-    {
-      "id": "1667074475924",
-      "name": "ff"
-    },
     {
       "id": "1667248504014",
       "name": "Beds"
@@ -167,8 +211,20 @@
       "name": "Chairs"
     },
     {
-      "id": "1667248784869",
-      "name": "Children's furniture"
+      "id": "1667255544806",
+      "name": "Sofas"
+    },
+    {
+      "id": "1667255583125",
+      "name": "Bookcases"
+    },
+    {
+      "id": "1667255601687",
+      "name": "Tables"
+    },
+    {
+      "id": "1667265018056",
+      "name": "Lights"
     }
   ]
 }

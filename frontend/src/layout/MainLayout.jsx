@@ -4,25 +4,35 @@ import { Link } from "react-router-dom";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import CategoryIcon from "@mui/icons-material/Category";
+import styles from "../style/mainLayout.module.css";
 function MainLayout({ children }) {
   return (
     <div>
       <div>
-        <header className="header">
+        <header className={styles.header}>
           <LogoutIcon style={{ fill: "white" }} />
         </header>
       </div>
       <aside>
-        <nav className="pagesLink">
-          <Link to="/">
-            <InventoryIcon style={{ fill: "white" }} />
-          </Link>
-          <Link to="/pos">
-            <ShoppingCartIcon />
-          </Link>
-          <Link to="/catacgories">
-            <CategoryIcon />
-          </Link>
+        <nav className={styles.nav}>
+          <div className={styles.pageLink}>
+            <Link to="/products">
+              <InventoryIcon style={{ fill: "#AA6EBD" }} />
+            </Link>
+            <p>Products</p>
+          </div>
+          <div className={styles.pageLink}>
+            <Link to="/">
+              <ShoppingCartIcon style={{ fill: "#5EC186" }} />
+            </Link>
+            <p>Sell</p>
+          </div>
+          <div className={styles.pageLink}>
+            <Link to="/catacgories"  >
+              <CategoryIcon  style={{ fill: "#5FBDD8" }} />
+            </Link>
+            <p>categories</p>
+          </div>
         </nav>
       </aside>
 

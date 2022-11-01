@@ -1,11 +1,13 @@
 import React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import MainLayout from "../layout/MainLayout";
 import DynamicTable from "../layout/DynamicTable";
 import axios from "axios";
 import Modal from "../Modal";
 import { useFormik } from "formik";
 import EditableRow from "../layout/EditableCategoryRow";
+import styles from "../style/productsAndCategoryPages.module.css";
+
 
 function CategoriesPage() {
   const [categories, setCategories] = useState([]);
@@ -17,7 +19,7 @@ function CategoriesPage() {
     initialValues: {
       name: "",
     },
-    onSubmit: (values) => {
+    onSubmit: (values , {resetForm}) => {
       fetch("categories", {
         method: "POST",
         headers: {
@@ -29,6 +31,7 @@ function CategoriesPage() {
         }),
       });
       reRenderTableData();
+      resetForm({values : ''})
     },
   });
   const fetchCategories = async () => {
@@ -50,12 +53,13 @@ function CategoriesPage() {
     setFilteredData(categories);
     const data = categories.filter((category) => {
       if (searchInput === "") return category;
-      else if (category.name.includes(searchInput)) {
+      else if (category.name.toLowerCase().includes(searchInput)) {
         return category;
       }
+      return null ;
     });
     setFilteredData(data);
-  }, [searchInput]);
+  }, [searchInput , categories]);
 
   const column = [
     { heading: "", value: "delete" },
@@ -74,14 +78,26 @@ function CategoriesPage() {
 
   return (
     <MainLayout>
-      <div style={{ margin: 50 }}>
-        <button onClick={toggleShowModal}>add category</button>
+       <div className={styles.header}>
+        <h2>Categories</h2>
+      </div>
+      <div className={styles.subHeader}>
+        <p>Add, view and edit your category in one place</p>
+        <button onClick={toggleShowModal} className={styles.addButton}>
+          Add Category
+        </button>
+      </div>
+      <div className={styles.searchDiv}>
         <input
-          className="search"
+        className={styles.searchInput}
+          name="search"
           placeholder="Search..."
           onChange={(e) => setSearchInput(e.target.value.toLowerCase())}
           value={searchInput}
         />
+        <div>
+          showing <strong>{filteredData.length}</strong> categories
+        </div>
       </div>
 
       {showModal ? (

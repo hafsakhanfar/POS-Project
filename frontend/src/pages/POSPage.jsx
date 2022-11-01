@@ -77,7 +77,7 @@ function POSPage() {
     if (filterValue === "") {
       data = products.filter((product) => {
         if (searchInput === "") return product;
-        else if (product.name.includes(searchInput)) {
+        else if (product.name.toLowerCase().includes(searchInput)) {
           return product;
         }
       });

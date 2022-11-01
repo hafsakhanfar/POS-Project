@@ -1,10 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import MainLayout from "../layout/MainLayout";
 import DynamicTable from "../layout/DynamicTable";
 import axios from "axios";
 import Modal from "../Modal";
-import { Form, useFormik, Field, FormikProps } from "formik";
+import { useFormik } from "formik";
 import EditableRow from "../layout/EditableProductRow";
+import styles from "../style/productsAndCategoryPages.module.css";
+
 function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -12,7 +14,7 @@ function ProductsPage() {
   const [searchInput, setSearchInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
   const [categories, setCategories] = useState([]);
-  
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -21,7 +23,7 @@ function ProductsPage() {
       image: "",
       price: "",
     },
-    onSubmit: (values) => {
+    onSubmit: (values, { resetForm }) => {
       fetch("products", {
         method: "POST",
         headers: {
@@ -33,6 +35,7 @@ function ProductsPage() {
         }),
       });
       reRenderTableData();
+      resetForm({ values: "" });
     },
   });
   const fetchProducts = async () => {
@@ -50,12 +53,13 @@ function ProductsPage() {
   useEffect(() => {
     const data = products.filter((product) => {
       if (searchInput === "") return product;
-      else if (product.name.includes(searchInput)) {
+      else if (product.name.toLowerCase().includes(searchInput)) {
         return product;
       }
+      return null;
     });
     setFilteredData(data);
-  }, [searchInput]);
+  }, [searchInput, products]);
 
   const toggleShowModal = () => {
     setShowModal(!showModal);
@@ -63,10 +67,10 @@ function ProductsPage() {
 
   const column = [
     { heading: "", value: "delete" },
+    { heading: "Image", value: "image" },
     { heading: "Name", value: "name" },
     { heading: "Product Code", value: "code" },
     { heading: "Category", value: "category" },
-    { heading: "Image", value: "image" },
     { heading: "Price", value: "price" },
     { heading: "", value: "edit" },
   ];
@@ -91,14 +95,26 @@ function ProductsPage() {
 
   return (
     <MainLayout>
-      <div style={{ margin: 50 }}>
-        <button onClick={handleAddClick}>add product</button>
+      <div className={styles.header}>
+        <h2>Products</h2>
+      </div>
+      <div className={styles.subHeader}>
+        <p>Add, view and edit your product in one place</p>
+        <button onClick={handleAddClick} className={styles.addButton}>
+          Add Product
+        </button>
+      </div>
+      <div className={styles.searchDiv}>
         <input
-          className="search"
+          className={styles.searchInput}
+          name="search"
           placeholder="Search..."
           onChange={(e) => setSearchInput(e.target.value.toLowerCase())}
           value={searchInput}
         />
+        <div>
+          showing <strong>{filteredData.length}</strong> products
+        </div>
       </div>
 
       {showModal ? (
@@ -131,6 +147,7 @@ function ProductsPage() {
                   value={formik.values.category}
                   name="category"
                 >
+                  <option></option>
                   {categories.map((category) => (
                     <option>{category.name}</option>
                   ))}
@@ -151,7 +168,7 @@ function ProductsPage() {
             <label>
               price:
               <input
-                type="number"
+                type="text"
                 name="price"
                 onChange={formik.handleChange}
                 value={formik.values.price}

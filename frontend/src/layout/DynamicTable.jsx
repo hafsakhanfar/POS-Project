@@ -1,8 +1,8 @@
 import EditIcon from "@mui/icons-material/Edit";
-import ClearIcon from "@mui/icons-material/Clear";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import axios from "axios";
-import { useState, useMemo } from "react";
-import Pagination from "./pagination/Pagination";
+import { useState } from "react";
+import Pagination from "./Pagination";
 
 // function DynamicTable({ TableData }) {
 //   // get table column
@@ -70,17 +70,12 @@ const DynamicTable = ({
   // const firstPageIndex = (currentPage - 1) * 6;
   // const lastPageIndex = firstPageIndex + 6;
   // const currentTableData = data.slice(firstPageIndex, lastPageIndex);
-  
+
   const [currentPage, setCurrentPage] = useState(1);
   const indexOfLastRecord = currentPage * 6;
   const indexOfFirstRecord = indexOfLastRecord - 6;
-  const currentRecords = data.slice(
-    indexOfFirstRecord,
-    indexOfLastRecord
-  );
+  const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(data.length / 6);
-
-  
 
   return (
     <>
@@ -103,14 +98,13 @@ const DynamicTable = ({
               EditableRow={EditableRow}
             />
           ))}
-          <Pagination
-        nPages={nPages}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-      />
         </tbody>
       </table>
-      
+      <Pagination
+        nPages={nPages}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </>
   );
 };
@@ -161,6 +155,7 @@ const TableRow = ({
                   className="productImage"
                   placeholder={item.name}
                   src={item[columnItem.value]}
+                  alt={item.name}
                 />
               </td>
             );
@@ -169,7 +164,7 @@ const TableRow = ({
           if (columnItem.value.includes("delete")) {
             return (
               <td key={index}>
-                <ClearIcon onClick={handleDelete} />
+                <DeleteOutlineIcon onClick={handleDelete} />
               </td>
             );
           }
@@ -177,7 +172,7 @@ const TableRow = ({
           if (columnItem.value.includes("edit")) {
             return (
               <td key={index}>
-                <EditIcon onClick={() => setEditToggle(true)} />
+                <EditIcon style={{ fill: "#41af4b" }} onClick={() => setEditToggle(true)} />
               </td>
             );
           }

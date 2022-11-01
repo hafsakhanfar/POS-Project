@@ -9,7 +9,7 @@ function Cart({ cartItems, setCart }) {
   useEffect(() => {
     let total = 0;
     for (const item of cartItems) {
-      total = total + item.totalPrice;
+      total = total + +item.totalPrice;
     }
     total = total - (discount * total);
     total = total + (tax * total);

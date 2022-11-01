@@ -1,0 +1,38 @@
+.header {
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #3b4953;
+  gap: 5rem;
+  padding: 8px 16px;
+  z-index: 1;
+  top: 0%;
+  left: 0%;
+}
+
+.nav {
+  box-sizing: border-box;
+  width: 4rem;
+  height: 100%;
+  display: flex;
+  background-color: #e5eaed;
+  flex-direction: column;
+  top: 0%;
+  left: 0%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: fixed;
+  z-index: 1;
+}
+
+.pageLink {
+  box-sizing: border-box;
+  width: 4rem;
+  padding: 0;
+  margin-top: 3rem;
+  text-align: center;
+  font-size: small;
+  font-weight: 300;
+  font-family: "Times New Roman", Times, serif;
+}

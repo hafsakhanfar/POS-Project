@@ -7,10 +7,9 @@ function ProductsContainer({ products, handleProductClick }) {
       <div className={styles.productsContainer}>
         {products.map((product, index) => {
           return (
-            <div className={styles.frame}>
+            <div className={styles.frame} key={index}>
               <div
                 className={styles.imgBackground}
-                key={index}
                 onClick={() => {
                   handleProductClick(product);
                 }}

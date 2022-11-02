@@ -6,7 +6,7 @@ function CategoriesContainer({ categories, setFilterValue }) {
   };
   return (
     <div className={styles.container}>
-      <button className={styles.categoryBox} onClick={() => setFilterValue("")}>
+      <button className={styles.categoryBox} style={{backgroundColor:"#678E97"}}onClick={() => setFilterValue("")}>
         All
       </button>
       {categories.map((category, index) => {

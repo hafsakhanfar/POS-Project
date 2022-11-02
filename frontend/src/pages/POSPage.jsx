@@ -4,9 +4,12 @@ import axios from "axios";
 import ProductsContainer from "../POSComponents/ProductsContainer";
 import CategoriesContainer from "../POSComponents/CategoriesContainer";
 import Cart from "../POSComponents/Cart";
-import searchBox from "../style/searchBox.module.css";
+import searchBox from "../assetsStayles/searchBox.module.css";
 import styles from "../style/PosPage.module.css";
+import Loading from "../layout/Loading";
+import loading from "../assetsStayles/loading.module.css";
 
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 function POSPage() {
   const [filteredData, setFilteredData] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -65,7 +68,9 @@ function POSPage() {
     const result = await axios.get("products");
     setProducts(await result.data);
     setFilteredData(await result.data);
-    setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -81,6 +86,7 @@ function POSPage() {
         else if (product.name.toLowerCase().includes(searchInput)) {
           return product;
         }
+        return null;
       });
       setFilteredData(data);
     } else if (filterValue !== "" && searchInput === "") {
@@ -88,6 +94,7 @@ function POSPage() {
         if (product.category.match(filterValue)) {
           return product;
         }
+        return null;
       });
       setFilteredData(data);
     } else {
@@ -96,11 +103,12 @@ function POSPage() {
         else if (product.name.includes(searchInput)) {
           return product;
         }
+        return null;
       });
 
       setFilteredData(data);
     }
-  }, [searchInput, filterValue]);
+  }, [searchInput, filterValue, products]);
 
   const fetchCategories = async () => {
     const result = await axios.get("categories");
@@ -119,7 +127,7 @@ function POSPage() {
           />
 
           {isLoading ? (
-            "loading"
+            <Loading>Loading...</Loading>
           ) : (
             <ProductsContainer
               products={filteredData}
@@ -136,7 +144,12 @@ function POSPage() {
         {cart.length !== 0 ? (
           <Cart cartItems={cart} setCart={setCart} />
         ) : (
-          "there is no product on cart"
+          <div className={loading.container}>
+            <h3>
+              <AddShoppingCartIcon style={{ fontSize: 100 }} />
+            </h3>
+            <p>there is no product on cart</p>
+          </div>
         )}
       </div>
     </MainLayout>

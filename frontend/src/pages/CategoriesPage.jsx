@@ -7,8 +7,9 @@ import Modal from "../Modal";
 import EditableRow from "../layout/EditableCategoryRow";
 import styles from "../style/productsandcategoresPages.module.css";
 import AddFormik from "../formik/AddCategoryFormik";
-import button from "../style/addButton.module.css";
-import searchBox from "../style/searchBox.module.css";
+import button from "../assetsStayles/addButton.module.css";
+import searchBox from "../assetsStayles/searchBox.module.css";
+import Loading from "../layout/Loading";
 
 function CategoriesPage() {
   const [categories, setCategories] = useState([]);
@@ -16,33 +17,12 @@ function CategoriesPage() {
   const [showModal, setShowModal] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-  // const formik = useFormik({
-  //   initialValues: {
-  //     name: "",
-  //   },
-  //   onSubmit: (values, { resetForm }) => {
-  //     const newData = {
-  //       id: new Date().getTime().toString(),
-  //       ...values,
-  //     };
-  //     fetch("categories", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json; charset=UTF-8",
-  //       },
-  //       body: JSON.stringify(newData),
-  //     });
-  //     setCategories([...categories, newData]);
-  //     // reRenderTableData();
-  //     resetForm({ values: "" });
-  //   },
-  // });
   const fetchCategories = async () => {
     setIsLoading(true);
     const result = await axios.get("categories");
     setCategories(await result.data);
     setFilteredData(await result.data);
-    setIsLoading(false);
+    setTimeout(()=>{setIsLoading(false)}, 1000);
   };
 
   useEffect(() => {
@@ -69,11 +49,6 @@ function CategoriesPage() {
     { heading: "Name", value: "name" },
     { heading: "", value: "edit" },
   ];
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   formik.handleSubmit();
-  // };
 
   const reRenderTableData = () => {
     fetchCategories();
@@ -116,7 +91,7 @@ function CategoriesPage() {
 
       <div>
         {isLoading ? (
-          "Loading"
+          <Loading>Loading...</Loading>
         ) : (
           <DynamicTable
             data={filteredData}

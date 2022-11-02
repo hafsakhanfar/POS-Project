@@ -1,16 +1,16 @@
 .productsContainer {
-  margin: -1rem 2rem 0rem 0rem;
+  margin: -2rem 2rem 0rem 0rem;
   overflow-y: scroll;
   overflow-x: hidden;
-  max-height: 90%;
-  min-height: 90%;
+  max-height: 95%;
+  min-height: 95%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   row-gap: 40px;
 }
 .container {
-  max-height: 52%;
-  min-height: 52%;
+  max-height: 60%;
+  min-height:60%;
   width: 100%;
 }
 .productImage {
@@ -24,8 +24,8 @@
 .frame {
   box-sizing: border-box;
   width: 120px;
-  max-height: 140px;
-  min-height: 140px;
+  max-height: 130px;
+  min-height: 130px;
   padding-top: 10px;
   background-color: #c3dde4;
   text-align: center;

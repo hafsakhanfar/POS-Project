@@ -3,10 +3,10 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import styles from "../style/cart.module.css";
 import RemoveTwoToneIcon from "@mui/icons-material/RemoveTwoTone";
 import AddIcon from "@mui/icons-material/Add";
-import input from "../style/input.module.css";
+import input from "../assetsStayles/input.module.css";
 import { ComponentToPrint } from "./ComponentToPrint";
 import { useReactToPrint } from "react-to-print";
-import button from "../style/addButton.module.css";
+import button from "../assetsStayles/addButton.module.css";
 
 function Cart({ cartItems, setCart }) {
   const [totalAmount, setTotalAmount] = useState(0);

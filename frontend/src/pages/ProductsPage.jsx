@@ -5,9 +5,11 @@ import axios from "axios";
 import Modal from "../Modal";
 import EditableRow from "../layout/EditableProductRow";
 import styles from "../style/productsandcategoresPages.module.css";
-import button from "../style/addButton.module.css";
+import button from "../assetsStayles/addButton.module.css";
 import AddFormik from "../formik/AddProductFormik";
-import searchBox from "../style/searchBox.module.css";
+import searchBox from "../assetsStayles/searchBox.module.css";
+import Loading from "../layout/Loading";
+
 function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -16,35 +18,12 @@ function ProductsPage() {
   const [filteredData, setFilteredData] = useState([]);
   const [categories, setCategories] = useState([]);
 
-  // const formik = useFormik({
-  //   initialValues: {
-  //     name: "",
-  //     code: "",
-  //     category: "",
-  //     image: "",
-  //     price: "",
-  //   },
-  //   onSubmit: (values, { resetForm }) => {
-  //     fetch("products", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json; charset=UTF-8",
-  //       },
-  //       body: JSON.stringify({
-  //         id: new Date().getTime().toString(),
-  //         ...values,
-  //       }),
-  //     });
-  //     reRenderTableData();
-  //     resetForm({ values: "" });
-  //   },
-  // });
   const fetchProducts = async () => {
     setIsLoading(true);
     const result = await axios.get("products");
     setProducts(await result.data);
     setFilteredData(await result.data);
-    setIsLoading(false);
+    setTimeout(()=>{setIsLoading(false)}, 1000);
   };
 
   useEffect(() => {
@@ -75,12 +54,6 @@ function ProductsPage() {
     { heading: "Price", value: "price" },
     { heading: "", value: "edit" },
   ];
-
-  // const handleSubmit = (event) => {
-  //   event.preventDefault();
-  //   formik.handleSubmit();
-  //   reRenderTableData();
-  // };
 
   const reRenderTableData = () => {
     fetchProducts();
@@ -128,7 +101,7 @@ function ProductsPage() {
                 categories={categories}
               />
             ) : (
-              "loading"
+              ""
             )}
             <button className="button" onClick={toggleShowModal}>
               CANCEL
@@ -139,7 +112,7 @@ function ProductsPage() {
 
       <div>
         {isLoading ? (
-          "Loading"
+          <Loading>Loading</Loading>
         ) : (
           <DynamicTable
             data={filteredData}

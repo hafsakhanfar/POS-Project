@@ -23,7 +23,7 @@ const DynamicTable = ({
         <thead>
           <tr>
             {column.map((item, index) => (
-              <TableHeadItem item={item} key={index} />
+              <th key={index}>{item.heading}</th>
             ))}
           </tr>
         </thead>
@@ -48,8 +48,6 @@ const DynamicTable = ({
     </>
   );
 };
-
-const TableHeadItem = ({ item }) => <th>{item.heading}</th>;
 
 const TableRow = ({
   item,

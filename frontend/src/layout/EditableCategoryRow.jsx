@@ -1,5 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
+import ClearIcon from "@mui/icons-material/Clear";
+import CheckIcon from "@mui/icons-material/Check";
 
 const EditableRow = ({ editFormData, handleEditForm, handleCancelClick }) => {
   const formik = useFormik({
@@ -18,9 +20,10 @@ const EditableRow = ({ editFormData, handleEditForm, handleCancelClick }) => {
   return (
     <>
       <td>
-        <button type="button" onClick={handleCancelClick}>
-          X
-        </button>
+        <ClearIcon
+          style={{ fill: "#41af4b", cursor: "pointer" }}
+          onClick={handleCancelClick}
+        />
       </td>
       <td>
         <input
@@ -33,9 +36,10 @@ const EditableRow = ({ editFormData, handleEditForm, handleCancelClick }) => {
         ></input>
       </td>
       <td>
-        <button type="button" onClick={formik.handleSubmit}>
-          O
-        </button>
+        <CheckIcon
+          style={{ fill: "#41af4b", cursor: "pointer" }}
+          onClick={formik.handleSubmit}
+        />
       </td>
     </>
   );

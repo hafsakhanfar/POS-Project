@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import DeleteIcon from '@mui/icons-material/Delete';
-
 function Cart({ cartItems, setCart }) {
   const [totalAmount, setTotalAmount] = useState(0);
   const [tax, setTax] = useState(0);

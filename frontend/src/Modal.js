@@ -5,6 +5,7 @@ export default function Modal({ children }) {
   const elementRef = useRef(null);
   if (!elementRef.current) {
     elementRef.current = document.createElement("div");
+    // elementRef.current.classList.add("modal")
   }
   useEffect(() => {
     const modalRoot = document.getElementById("modal");
@@ -13,9 +14,9 @@ export default function Modal({ children }) {
     return () => modalRoot.removeChild(elementRef.current);
   }, []);
   return createPortal(
-    <div >
-      {children}
-    </div>,
+  <div>{children}</div>
+      
+,
     elementRef.current
   );
 }

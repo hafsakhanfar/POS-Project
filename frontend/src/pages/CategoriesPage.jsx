@@ -6,7 +6,9 @@ import axios from "axios";
 import Modal from "../Modal";
 import { useFormik } from "formik";
 import EditableRow from "../layout/EditableCategoryRow";
-import styles from "../style/productsAndCategoryPages.module.css";
+import styles from "../style/productsandcategoresPages.module.css";
+import AddFormik from "../formik/AddCategoryFormik";
+import button from "../style/addButton.module.css";
 
 function CategoriesPage() {
   const [categories, setCategories] = useState([]);
@@ -14,25 +16,27 @@ function CategoriesPage() {
   const [showModal, setShowModal] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-    },
-    onSubmit: (values, { resetForm }) => {
-      fetch("categories", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json; charset=UTF-8",
-        },
-        body: JSON.stringify({
-          id: new Date().getTime().toString(),
-          ...values,
-        }),
-      });
-      reRenderTableData();
-      resetForm({ values: "" });
-    },
-  });
+  // const formik = useFormik({
+  //   initialValues: {
+  //     name: "",
+  //   },
+  //   onSubmit: (values, { resetForm }) => {
+  //     const newData = {
+  //       id: new Date().getTime().toString(),
+  //       ...values,
+  //     };
+  //     fetch("categories", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json; charset=UTF-8",
+  //       },
+  //       body: JSON.stringify(newData),
+  //     });
+  //     setCategories([...categories, newData]);
+  //     // reRenderTableData();
+  //     resetForm({ values: "" });
+  //   },
+  // });
   const fetchCategories = async () => {
     setIsLoading(true);
     const result = await axios.get("categories");
@@ -66,10 +70,10 @@ function CategoriesPage() {
     { heading: "", value: "edit" },
   ];
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    formik.handleSubmit();
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   formik.handleSubmit();
+  // };
 
   const reRenderTableData = () => {
     fetchCategories();
@@ -82,7 +86,7 @@ function CategoriesPage() {
       </div>
       <div className={styles.subHeader}>
         <p>Add, view and edit your category in one place</p>
-        <button onClick={toggleShowModal} className={styles.addButton}>
+        <button onClick={toggleShowModal} className={button.addButton}>
           Add Category
         </button>
       </div>
@@ -101,22 +105,12 @@ function CategoriesPage() {
 
       {showModal ? (
         <Modal>
-          <form onSubmit={handleSubmit}>
-            <label>
-              name:
-              <input
-                type="text"
-                name="name"
-                onChange={formik.handleChange}
-                value={formik.values.name}
-              />
-            </label>
-
-            <button type="submit">Submit</button>
+          <div className={styles.modal}>
+            <AddFormik categories={categories} setCategories={setCategories} />
             <button className="button" onClick={toggleShowModal}>
               CANCEL
             </button>
-          </form>
+          </div>
         </Modal>
       ) : null}
 

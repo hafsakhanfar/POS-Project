@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import MainLayout from "../layout/MainLayout";
 import axios from "axios";
-import ProductsContainer from "../layout/POSComponent/ProductsContainer";
-import CategoriesContainer from "../layout/POSComponent/CategoriesContainer";
-import Cart from "../layout/POSComponent/Cart";
+import ProductsContainer from "../POSComponents/ProductsContainer";
+import CategoriesContainer from "../POSComponents/CategoriesContainer";
+import Cart from "../POSComponents/Cart";
 
 function POSPage() {
   const [filteredData, setFilteredData] = useState([]);

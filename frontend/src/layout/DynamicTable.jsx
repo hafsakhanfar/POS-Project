@@ -164,7 +164,10 @@ const TableRow = ({
           if (columnItem.value.includes("delete")) {
             return (
               <td key={index}>
-                <DeleteOutlineIcon onClick={handleDelete} />
+                <DeleteOutlineIcon
+                  style={{ cursor: "pointer" }}
+                  onClick={handleDelete}
+                />
               </td>
             );
           }
@@ -172,7 +175,10 @@ const TableRow = ({
           if (columnItem.value.includes("edit")) {
             return (
               <td key={index}>
-                <EditIcon style={{ fill: "#41af4b" }} onClick={() => setEditToggle(true)} />
+                <EditIcon
+                  style={{ fill: "#41af4b", cursor: "pointer" }}
+                  onClick={() => setEditToggle(true)}
+                />
               </td>
             );
           }

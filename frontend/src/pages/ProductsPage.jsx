@@ -5,7 +5,8 @@ import axios from "axios";
 import Modal from "../Modal";
 import { useFormik } from "formik";
 import EditableRow from "../layout/EditableProductRow";
-import styles from "../style/productsAndCategoryPages.module.css";
+import styles from "../style/productsandcategoresPages.module.css";
+import button from "../style/addButton.module.css";
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
@@ -100,7 +101,7 @@ function ProductsPage() {
       </div>
       <div className={styles.subHeader}>
         <p>Add, view and edit your product in one place</p>
-        <button onClick={handleAddClick} className={styles.addButton}>
+        <button onClick={handleAddClick} className={button.addButton}>
           Add Product
         </button>
       </div>

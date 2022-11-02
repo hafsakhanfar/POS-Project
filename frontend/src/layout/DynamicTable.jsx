@@ -4,61 +4,6 @@ import axios from "axios";
 import { useState } from "react";
 import Pagination from "./Pagination";
 
-// function DynamicTable({ TableData }) {
-//   // get table column
-//   const column = Object.keys(TableData[0]);
-//   // get table heading data
-//   const ThData = () => {
-//     return column.map((data) => {
-//       return <th key={data}>{data}</th>;
-//     });
-//   };
-//   // get table row data
-//   const tdData = () => {
-//     return TableData.map((data) => {
-//       return (
-//         <tr key={data.id}>
-//           {column.map((v) => {
-//             return <td >{data[v]}</td>;
-//           })}
-//         </tr>
-//       );
-//     });
-//   };
-
-//   return (
-//     <table className="table">
-//       <thead>
-//         <tr>{ThData()}</tr>
-//       </thead>
-//       <tbody>{tdData()}</tbody>
-//     </table>
-//   );
-// }
-// export default DynamicTable;
-// export default function DynamicTable({ tbodyData, theadData }) {
-//   return (
-//     <table>
-//         <thead>
-//            <tr>
-//             {theadData.map(heading => {
-//               return <th key={heading}>{heading}</th>
-//             })}
-//           </tr>
-//         </thead>
-//         <tbody>
-//             {tbodyData.map((row, index) => {
-//                 return <tr key={index}>
-//                     {theadData.map((key, index) => {
-//                          return <td key={row[key]}>{row[key]}</td>
-//                     })}
-//               </tr>;
-//             })}
-//         </tbody>
-//     </table>
-//  );
-//  }
-
 const DynamicTable = ({
   data,
   column,
@@ -66,11 +11,6 @@ const DynamicTable = ({
   reRenderTableData,
   EditableRow,
 }) => {
-  // const [currentPage, setCurrentPage] = useState(1);
-  // const firstPageIndex = (currentPage - 1) * 6;
-  // const lastPageIndex = firstPageIndex + 6;
-  // const currentTableData = data.slice(firstPageIndex, lastPageIndex);
-
   const [currentPage, setCurrentPage] = useState(1);
   const indexOfLastRecord = currentPage * 6;
   const indexOfFirstRecord = indexOfLastRecord - 6;

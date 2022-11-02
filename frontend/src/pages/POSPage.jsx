@@ -4,6 +4,8 @@ import axios from "axios";
 import ProductsContainer from "../POSComponents/ProductsContainer";
 import CategoriesContainer from "../POSComponents/CategoriesContainer";
 import Cart from "../POSComponents/Cart";
+import searchBox from "../style/searchBox.module.css";
+import styles from "../style/PosPage.module.css";
 
 function POSPage() {
   const [filteredData, setFilteredData] = useState([]);
@@ -13,7 +15,7 @@ function POSPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [filterValue, setFilterValue] = useState("");
   const [cart, setCart] = useState([]);
-  
+
   useEffect(() => {
     if (localStorage.getItem("localCart")) {
       const storedList = JSON.parse(localStorage.getItem("localCart"));
@@ -24,7 +26,6 @@ function POSPage() {
   useEffect(() => {
     localStorage.setItem("localCart", JSON.stringify(cart));
   }, [cart]);
-
 
   const addProductToCart = (product) => {
     let findProductInCart = cart.find((i) => {
@@ -108,17 +109,15 @@ function POSPage() {
 
   return (
     <MainLayout>
-      <div style={{ margin: 50 }}>
-        <input
-          className="search"
-          placeholder="Search..."
-          onChange={(e) => setSearchInput(e.target.value.toLowerCase())}
-          value={searchInput}
-        />
-      </div>
+      <div className={styles.main}>
+        <div className={styles.subMain}>
+          <input
+            className={searchBox.searchInput}
+            placeholder="Search..."
+            onChange={(e) => setSearchInput(e.target.value.toLowerCase())}
+            value={searchInput}
+          />
 
-      <div style={{ margin: 100 }}>
-        <div>
           {isLoading ? (
             "loading"
           ) : (
@@ -127,16 +126,13 @@ function POSPage() {
               handleProductClick={addProductToCart}
             />
           )}
-        </div>
-        <div>
-          <button onClick={() => setFilterValue("")}>All</button>
+
           <CategoriesContainer
             categories={categories}
             setFilterValue={setFilterValue}
           />
         </div>
-      </div>
-      <div style={{ margin: 100 }}>
+
         {cart.length !== 0 ? (
           <Cart cartItems={cart} setCart={setCart} />
         ) : (

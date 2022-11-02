@@ -16,48 +16,19 @@
   height: 4rem;
 }
 
-.searchInput {
-  background: #fff;
-  height: 50px;
-  width: 327px;
-  color: #3b4953;
-  border: 1px solid #cccccc;
-  border-radius: 4px 0px 0px 4px;
-  display: inline-block;
-  text-align: left;
-  font-size: 16px;
-  font-weight: 500;
-  padding: 0px 0px 0px 57px;
-  font-size: 16px;
-  background: #ffffff url("http://seodesigns.com/projects/TD/images/search.png")
-    18px 15px no-repeat;
-  background-size: 18px 18px;
-  margin-top: -1rem;
-}
-
-.searchDiv {
-  display: flex;
-  width: 80%;
-  justify-content: space-between;
-  padding: 2rem 2rem 0rem 16rem;
-  height: 4rem;
-}
-
-.modal{
+.modal {
   font-weight: bold;
   background-color: #ffffff;
   text-align: center;
   justify-content: center;
-  margin: auto;
-  margin-top: -10%;
   padding: 25px;
   border: 1px solid #888;
   border-radius: 0.5rem;
-  margin: 30%;
+  margin: 5% 0% 25% 35%;
   background-color: #e5eaed;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  width:25rem;
+  width: 25rem;
   height: auto;
 }

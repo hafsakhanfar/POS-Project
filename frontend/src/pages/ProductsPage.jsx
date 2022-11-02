@@ -3,11 +3,11 @@ import MainLayout from "../layout/MainLayout";
 import DynamicTable from "../layout/DynamicTable";
 import axios from "axios";
 import Modal from "../Modal";
-import { useFormik } from "formik";
 import EditableRow from "../layout/EditableProductRow";
 import styles from "../style/productsandcategoresPages.module.css";
 import button from "../style/addButton.module.css";
-
+import AddFormik from "../formik/AddProductFormik";
+import searchBox from "../style/searchBox.module.css";
 function ProductsPage() {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -16,29 +16,29 @@ function ProductsPage() {
   const [filteredData, setFilteredData] = useState([]);
   const [categories, setCategories] = useState([]);
 
-  const formik = useFormik({
-    initialValues: {
-      name: "",
-      code: "",
-      category: "",
-      image: "",
-      price: "",
-    },
-    onSubmit: (values, { resetForm }) => {
-      fetch("products", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json; charset=UTF-8",
-        },
-        body: JSON.stringify({
-          id: new Date().getTime().toString(),
-          ...values,
-        }),
-      });
-      reRenderTableData();
-      resetForm({ values: "" });
-    },
-  });
+  // const formik = useFormik({
+  //   initialValues: {
+  //     name: "",
+  //     code: "",
+  //     category: "",
+  //     image: "",
+  //     price: "",
+  //   },
+  //   onSubmit: (values, { resetForm }) => {
+  //     fetch("products", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json; charset=UTF-8",
+  //       },
+  //       body: JSON.stringify({
+  //         id: new Date().getTime().toString(),
+  //         ...values,
+  //       }),
+  //     });
+  //     reRenderTableData();
+  //     resetForm({ values: "" });
+  //   },
+  // });
   const fetchProducts = async () => {
     setIsLoading(true);
     const result = await axios.get("products");
@@ -76,11 +76,11 @@ function ProductsPage() {
     { heading: "", value: "edit" },
   ];
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    formik.handleSubmit();
-    reRenderTableData();
-  };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   formik.handleSubmit();
+  //   reRenderTableData();
+  // };
 
   const reRenderTableData = () => {
     fetchProducts();
@@ -105,9 +105,9 @@ function ProductsPage() {
           Add Product
         </button>
       </div>
-      <div className={styles.searchDiv}>
+      <div className={searchBox.searchDiv}>
         <input
-          className={styles.searchInput}
+          className={searchBox.searchInput}
           name="search"
           placeholder="Search..."
           onChange={(e) => setSearchInput(e.target.value.toLowerCase())}
@@ -120,66 +120,20 @@ function ProductsPage() {
 
       {showModal ? (
         <Modal>
-          <form onSubmit={handleSubmit}>
-            <label>
-              name:
-              <input
-                type="text"
-                name="name"
-                onChange={formik.handleChange}
-                value={formik.values.name}
+          <div className={styles.modal}>
+            {categories.length !== 0 ? (
+              <AddFormik
+                products={products}
+                setProducts={setProducts}
+                categories={categories}
               />
-            </label>
-
-            <label>
-              Code:
-              <input
-                type="text"
-                name="code"
-                onChange={formik.handleChange}
-                value={formik.values.code}
-              />
-            </label>
-            <label>
-              category:
-              {categories.length !== 0 ? (
-                <select
-                  onChange={formik.handleChange}
-                  value={formik.values.category}
-                  name="category"
-                >
-                  <option></option>
-                  {categories.map((category) => (
-                    <option>{category.name}</option>
-                  ))}
-                </select>
-              ) : (
-                "loading"
-              )}
-            </label>
-            <label>
-              image:
-              <input
-                type="text"
-                name="image"
-                onChange={formik.handleChange}
-                value={formik.values.image}
-              />
-            </label>
-            <label>
-              price:
-              <input
-                type="text"
-                name="price"
-                onChange={formik.handleChange}
-                value={formik.values.price}
-              />
-            </label>
-            <button type="submit">Submit</button>
+            ) : (
+              "loading"
+            )}
             <button className="button" onClick={toggleShowModal}>
               CANCEL
             </button>
-          </form>
+          </div>
         </Modal>
       ) : null}
 

@@ -1,0 +1,19 @@
+.main {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 0rem 0rem 8rem;
+  overflow: hidden;
+  background-color: #f0f4f4;
+  padding-bottom: 1.5rem;
+}
+
+.subMain {
+  width: 100%;
+  min-height: 600px;
+  max-height: 600px;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 10px 10px 30px;
+  flex-direction: column;
+}

@@ -1,0 +1,42 @@
+.productsContainer {
+  margin: -1rem 2rem 0rem 0rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 90%;
+  min-height: 90%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  row-gap: 40px;
+}
+.container {
+  max-height: 52%;
+  min-height: 52%;
+  width: 100%;
+}
+.productImage {
+  max-width: 120px;
+  min-width: 120px;
+  max-height: 100px;
+  min-height: 100px;
+  cursor: pointer;
+  object-fit: contain;
+}
+.frame {
+  box-sizing: border-box;
+  width: 120px;
+  max-height: 140px;
+  min-height: 140px;
+  padding-top: 10px;
+  background-color: #c3dde4;
+  text-align: center;
+  justify-content: center;
+  border: 1px;
+  border-radius: 0.3rem;
+  overflow: hidden;
+}
+
+.imgBackground {
+  background-color: white;
+  max-height: 100px;
+  min-height: 100px;
+}

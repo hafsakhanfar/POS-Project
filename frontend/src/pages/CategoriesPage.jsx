@@ -4,11 +4,11 @@ import MainLayout from "../layout/MainLayout";
 import DynamicTable from "../layout/DynamicTable";
 import axios from "axios";
 import Modal from "../Modal";
-import { useFormik } from "formik";
 import EditableRow from "../layout/EditableCategoryRow";
 import styles from "../style/productsandcategoresPages.module.css";
 import AddFormik from "../formik/AddCategoryFormik";
 import button from "../style/addButton.module.css";
+import searchBox from "../style/searchBox.module.css";
 
 function CategoriesPage() {
   const [categories, setCategories] = useState([]);
@@ -90,9 +90,9 @@ function CategoriesPage() {
           Add Category
         </button>
       </div>
-      <div className={styles.searchDiv}>
+      <div className={searchBox.searchDiv}>
         <input
-          className={styles.searchInput}
+          className={searchBox.searchInput}
           name="search"
           placeholder="Search..."
           onChange={(e) => setSearchInput(e.target.value.toLowerCase())}

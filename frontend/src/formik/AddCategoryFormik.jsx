@@ -1,6 +1,8 @@
 import React from "react";
 import { Formik, Field, Form } from "formik";
 import button from "../style/addButton.module.css";
+import style from "../style/formik.module.css";
+import input from "../style/input.module.css";
 
 function AddFormik({ categories, setCategories }) {
   return (
@@ -26,20 +28,14 @@ function AddFormik({ categories, setCategories }) {
           resetForm({ values: "" });
         }}
       >
-        <Form>
-          <div >
-            <label htmlFor="name" >
-              name:
-            </label>
-            <Field
-              type="text"
-              name="name"
-              id="name"
-            
-            />
-          </div>
-
-          <button type="submit" className={button.addButton}>
+        <Form className={style.form}>
+          <label htmlFor="name">name: </label>
+          <Field type="text" name="name" id="name" className={input.input} />
+          <button
+            type="submit"
+            className={button.addButton}
+            style={{ width: 350 }}
+          >
             Add
           </button>
         </Form>

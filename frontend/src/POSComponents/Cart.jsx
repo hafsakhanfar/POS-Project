@@ -1,23 +1,41 @@
-import { useState, useEffect } from "react";
-import DeleteIcon from '@mui/icons-material/Delete';
+import { useState, useEffect, useRef } from "react";
+import DeleteIcon from "@mui/icons-material/Delete";
+import styles from "../style/cart.module.css";
+import RemoveTwoToneIcon from "@mui/icons-material/RemoveTwoTone";
+import AddIcon from "@mui/icons-material/Add";
+import input from "../style/input.module.css";
+import { ComponentToPrint } from "./ComponentToPrint";
+import { useReactToPrint } from "react-to-print";
+import button from "../style/addButton.module.css";
+
 function Cart({ cartItems, setCart }) {
   const [totalAmount, setTotalAmount] = useState(0);
   const [tax, setTax] = useState(0);
   const [discount, setDiscount] = useState(0);
+
+  const componentRef = useRef();
+
+  const handleReactToPrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
+  const handlePrint = () => {
+    handleReactToPrint();
+  };
 
   useEffect(() => {
     let total = 0;
     for (const item of cartItems) {
       total = total + +item.totalPrice;
     }
-    total = total - (discount * total);
-    total = total + (tax * total);
+    total = total - discount * total;
+    total = total + tax * total;
     setTotalAmount(total);
   }, [cartItems, tax, discount]);
-const DeleteFromCart = (id)=>{
-    const newCart =cartItems.filter(cartItem => cartItem.id !== id);
+  const DeleteFromCart = (id) => {
+    const newCart = cartItems.filter((cartItem) => cartItem.id !== id);
     setCart(newCart);
-}
+  };
   const handleIncreaseOuantity = (id) => {
     let newCart = [];
     let newItem;
@@ -57,25 +75,58 @@ const DeleteFromCart = (id)=>{
   };
 
   return (
-    <>
-      <div className="cartItems">
+    <div className={styles.container}>
+      <div style={{ color: "#678E98", cursor: "pointer", marginLeft: "auto" }}>
+        <a
+          onClick={() => {
+            setCart([]);
+          }}
+        >
+          <DeleteIcon />
+          Discard Sale
+        </a>
+      </div>
+      <div style={{ display: "none" }}>
+        <ComponentToPrint
+          cart={cartItems}
+          totalAmount={totalAmount}
+          ref={componentRef}
+          tax={tax}
+          discount={discount}
+        />
+      </div>
+      <div className={styles.productsList}>
         {cartItems.map((item, index) => {
           return (
-            <div key={index}>
-              <span>{item.name}</span> <span>{item.price}</span>
-              <button
+            <div key={index} className={styles.cartProduct}>
+              <div style={{ maxWidth: 30 }}>{item.name}</div>
+              {item.price}
+              <AddIcon
+                style={{ fill: "#41af4b", cursor: "pointer", marginRight: -35 }}
                 onClick={() => {
                   handleIncreaseOuantity(item.id);
                 }}
               />
-              <span>{item.quantity}</span>
-              <button
+              <div>{item.quantity}</div>
+              <RemoveTwoToneIcon
+                style={{ fill: "#41af4b", cursor: "pointer", marginLeft: -35 }}
                 onClick={() => {
                   if (item.quantity > 1) handleDecreaseOuantity(item.id);
                 }}
               />
-              <span>{item.totalPrice}</span>
-              <span><DeleteIcon onClick={()=>{DeleteFromCart(item.id)}}/></span>
+              <div>{item.totalPrice}</div>
+              <div>
+                <DeleteIcon
+                  style={{
+                    fill: "#41af4b",
+                    cursor: "pointer",
+                    paddingLeft: -35,
+                  }}
+                  onClick={() => {
+                    DeleteFromCart(item.id);
+                  }}
+                />
+              </div>
             </div>
           );
         })}
@@ -83,6 +134,7 @@ const DeleteFromCart = (id)=>{
       <div>
         Tax :
         <input
+          className={input.input}
           type="number"
           name="tax"
           onChange={(e) => {
@@ -92,8 +144,9 @@ const DeleteFromCart = (id)=>{
         />
       </div>
       <div>
-        Discoint :
+        Discount :
         <input
+          className={input.input}
           type="number"
           name="tax"
           onChange={(e) => {
@@ -102,9 +155,29 @@ const DeleteFromCart = (id)=>{
           value={discount * 100}
         />
       </div>
-
-      <div>Total Amount : {totalAmount}</div>
-    </>
+      Total Amount :
+      <div
+        className={input.input}
+        style={{
+          color: "#41af4b",
+        }}
+      >
+        {totalAmount}
+      </div>
+      {totalAmount !== 0 ? (
+        <div>
+          <button
+            className={button.addButton}
+            style={{ width: 350 }}
+            onClick={handlePrint}
+          >
+            Pay Now
+          </button>
+        </div>
+      ) : (
+        "Please add a product to the cart"
+      )}
+    </div>
   );
 }
 

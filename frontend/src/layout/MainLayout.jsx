@@ -28,8 +28,8 @@ function MainLayout({ children }) {
             <p>Sell</p>
           </div>
           <div className={styles.pageLink}>
-            <Link to="/catacgories"  >
-              <CategoryIcon  style={{ fill: "#5FBDD8" }} />
+            <Link to="/catacgories">
+              <CategoryIcon style={{ fill: "#5FBDD8" }} />
             </Link>
             <p>categories</p>
           </div>

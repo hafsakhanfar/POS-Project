@@ -23,8 +23,10 @@ POS systems track inventory which is useful especially in businesses that sell p
 
 <h2>Technologies used </h2>
 
- ![151359683-6602ec17-a473-43a5-b7e7-866d8194c959](https://user-images.githubusercontent.com/104949238/199702844-004a5367-8db1-40e9-9e75-fe4f81f14bd2.svg)
-![logo-javascript-256](https://user-images.githubusercontent.com/104949238/199704267-ed18c0ca-7a8b-4d78-88f8-81f19105b7cf.png)
+
+ <span>![151359683-6602ec17-a473-43a5-b7e7-866d8194c959](https://user-images.githubusercontent.com/104949238/199702844-004a5367-8db1-40e9-9e75-fe4f81f14bd2.svg) </span>
+    
+<span> ![logo-javascript-256](https://user-images.githubusercontent.com/104949238/199704267-ed18c0ca-7a8b-4d78-88f8-81f19105b7cf.png) </span>
 
 <p><a href="https://www.npmjs.com/package/react-to-print"> React-to-print<a/></p> 
 <p><a href="https://formik.org/">Formik<a/></p> 
@@ -36,17 +38,17 @@ POS systems track inventory which is useful especially in businesses that sell p
 <h2>POS Pages </h2>
 
 
-
-<p>categories page : This page has a table for all products categories that stored in the system DataBase, you can add a new category or delete one or edit it, also you can search for category by name </p>
+<h4>categories page : </h4>
+<p> This page has a table for all products categories that stored in the system DataBase, you can add a new category or delete one or edit it, also you can search for category by name </p>
 <br>
 
 ![image](https://user-images.githubusercontent.com/104949238/199715050-24266943-2540-4a7f-988b-68ff7f55ef51.png)
 
 
 
+<h4>Pos Page: </h4>
 
-
-<p>Pos Page: A page thats includes a Cart which allow you to purchase product add a discount or tax then generate digital receipt.<br> in this page also you can view products by their category ,search for products or add it to the cart.</p>
+<p> A page thats includes a Cart which allow you to purchase product add a discount or tax then generate digital receipt.<br> in this page also you can view products by their category ,search for products or add it to the cart.</p>
 
 <br>
 
@@ -55,8 +57,8 @@ POS systems track inventory which is useful especially in businesses that sell p
 
 
 
-
-<p>categories page : This page has a table for all products that stored in the system DataBase, you can add a new product or delete one or edit it,<br> also you can search for product by name </p>
+<h4>categories page : </h4>
+<p> This page has a table for all products that stored in the system DataBase, you can add a new product or delete one or edit it,<br> also you can search for product by name </p>
 
 <br>
 
@@ -92,16 +94,16 @@ POS systems track inventory which is useful especially in businesses that sell p
 
 <h2>How to clone this project</h2>
 <ol>   
-<li>Above the list of files, click Code.</li>
- <li>Copy the URL for the repository.</li>
- <li>Open Git Bash. </li>
- <li>Type git clone, and then paste the URL you copied earlier.</li>
- <p> git clone  https://github.com/hafsakhanfar/POS-Project.git <p>
+<li> Above the list of files, click Code.</li> 
+ <li> Copy the URL for the repository.</li>
+ <li> Open Git Bash. </li>
+ <li> Type git clone, and then paste the URL you copied earlier.</li>
+ <p> git clone " https://github.com/hafsakhanfar/POS-Project.git" <p>
  <li> Press Enter to create your local clone.<li>
  <li> Open it whit VSC and in backend directory<li>
- <li>Run --json-server --watch db.json --port 5000--</li>
- <li>Change directory to frontend by --cd frontend--</li>
-  <li>Excute --npm start-- to start the projec</li>
+ <li> Run --json-server --watch db.json --port 5000--</li>
+ <li> Change directory to frontend by --cd frontend--</li>
+ <li> Excute --npm start-- to start the projec</li>
 </ol>
 
   <hr>

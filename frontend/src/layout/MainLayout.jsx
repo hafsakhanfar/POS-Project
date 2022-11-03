@@ -22,13 +22,13 @@ function MainLayout({ children }) {
             <p>Products</p>
           </div>
           <div className={styles.pageLink}>
-            <Link to="/">
+            <Link to="/POS">
               <ShoppingCartIcon style={{ fill: "#5EC186" }} />
             </Link>
             <p>Sell</p>
           </div>
           <div className={styles.pageLink}>
-            <Link to="/catacgories">
+            <Link to="/">
               <CategoryIcon style={{ fill: "#5FBDD8" }} />
             </Link>
             <p>categories</p>

@@ -28,9 +28,6 @@ function CategoriesPage() {
     }, 1000);
   };
 
-  useEffect(() => {
-    fetchCategories().catch((err) => console.log(err));
-  }, []);
   const toggleShowModal = () => {
     setShowModal(!showModal);
   };

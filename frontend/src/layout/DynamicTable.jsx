@@ -78,7 +78,6 @@ const TableRow = ({
       .catch((error) => {
         console.log(error);
       });
-    console.log(response);
   };
 
   return (

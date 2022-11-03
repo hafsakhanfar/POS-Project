@@ -47,14 +47,20 @@ POS systems track inventory which is useful especially in businesses that sell p
 
 
 <p>Pos Page: A page thats includes a Cart which allow you to purchase product add a discount or tax then generate digital receipt.<br> in this page also you can view products by their category ,search for products or add it to the cart.</p>
+
 <br>
+
+
 ![image](https://user-images.githubusercontent.com/104949238/199700316-d6e8c142-2c6e-464c-b19c-59fb4c67a646.png)
 
 
 
 
 <p>categories page : This page has a table for all products that stored in the system DataBase, you can add a new product or delete one or edit it,<br> also you can search for product by name </p>
+
 <br>
+
+
 ![image](https://user-images.githubusercontent.com/104949238/199700787-6605d7e5-c3f9-4a58-8f73-a4cf07117b5c.png)
 
 
@@ -64,7 +70,8 @@ POS systems track inventory which is useful especially in businesses that sell p
 <h2>Technologies used </h2>
 
 <a href="https://beta.reactjs.org/">
-![151359683-6602ec17-a473-43a5-b7e7-866d8194c959](https://user-images.githubusercontent.com/104949238/199702844-004a5367-8db1-40e9-9e75-fe4f81f14bd2.svg)
+    ![image](https://user-images.githubusercontent.com/104949238/199716753-b3670359-64b2-4552-9bfc-7b9e558de4bf.png)
+
 <a/> 
 ![logo-javascript-256](https://user-images.githubusercontent.com/104949238/199704267-ed18c0ca-7a8b-4d78-88f8-81f19105b7cf.png)
 <p><a href="https://www.npmjs.com/package/react-to-print"> React-to-print<a/></p> 

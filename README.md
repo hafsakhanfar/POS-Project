@@ -47,7 +47,7 @@ POS systems track inventory which is useful especially in businesses that sell p
 
 <h4>Pos Page: </h4>
 
-<p> A page thats includes a Cart which allow you to purchase product add a discount or tax then generate digital receipt.<br> in this page also you can view products by their category ,search for products or add it to the cart.</p>
+<p> A page thats includes a Cart which allow you to purchase product add a discount or tax then generate digital receipt.In this page also you can view products by their category ,search for products or add it to the cart.</p>
 
 <br>
 
@@ -57,7 +57,7 @@ POS systems track inventory which is useful especially in businesses that sell p
 
 
 <h4>categories page : </h4>
-<p> This page has a table for all products that stored in the system DataBase, you can add a new product or delete one or edit it,<br> also you can search for product by name </p>
+<p> This page has a table for all products that stored in the system DataBase, you can add a new product or delete one or edit it,also you can search for product by name </p>
 
 <br>
 

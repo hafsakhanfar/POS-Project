@@ -24,9 +24,9 @@ POS systems track inventory which is useful especially in businesses that sell p
 <h2>Technologies used </h2>
 
 
- <span>![151359683-6602ec17-a473-43a5-b7e7-866d8194c959](https://user-images.githubusercontent.com/104949238/199702844-004a5367-8db1-40e9-9e75-fe4f81f14bd2.svg) </span>
+ <li >![151359683-6602ec17-a473-43a5-b7e7-866d8194c959](https://user-images.githubusercontent.com/104949238/199702844-004a5367-8db1-40e9-9e75-fe4f81f14bd2.svg) </li>
     
-<span> ![logo-javascript-256](https://user-images.githubusercontent.com/104949238/199704267-ed18c0ca-7a8b-4d78-88f8-81f19105b7cf.png) </span>
+<li> ![logo-javascript-256](https://user-images.githubusercontent.com/104949238/199704267-ed18c0ca-7a8b-4d78-88f8-81f19105b7cf.png) </li>
 
 <p><a href="https://www.npmjs.com/package/react-to-print"> React-to-print<a/></p> 
 <p><a href="https://formik.org/">Formik<a/></p> 
@@ -69,23 +69,11 @@ POS systems track inventory which is useful especially in businesses that sell p
 <hr>
 
 
-<h2>Technologies used </h2>
-
-<a href="https://beta.reactjs.org/">
-    ![image](https://user-images.githubusercontent.com/104949238/199716753-b3670359-64b2-4552-9bfc-7b9e558de4bf.png)
-
-<a/> 
-![logo-javascript-256](https://user-images.githubusercontent.com/104949238/199704267-ed18c0ca-7a8b-4d78-88f8-81f19105b7cf.png)
-<p><a href="https://www.npmjs.com/package/react-to-print"> React-to-print<a/></p> 
-<p><a href="https://formik.org/">Formik<a/></p> 
-
-
-<hr>
 
 <h2>Links </h2>
     
- ![image](https://user-images.githubusercontent.com/104949238/199711040-ccd19f94-8061-460e-9b58-81b71ac1f3db.png)
-    <p><p/>
+<li> ![image](https://user-images.githubusercontent.com/104949238/199711040-ccd19f94-8061-460e-9b58-81b71ac1f3db.png)
+    <p><p/> </li>
 <a href="https://helix-statistic-99a.notion.site/POS-project-a2b0fc4f651744a98cc23236633f94ce">
     Notion
 </a>

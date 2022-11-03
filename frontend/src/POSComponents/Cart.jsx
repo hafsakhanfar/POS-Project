@@ -86,6 +86,11 @@ function Cart({ cartItems, setCart }) {
           Discard Sale
         </a>
       </div>
+      <div className={styles.cartProduct}>
+        <div>name</div>
+        <div>price</div> <div>Quntity</div>
+        <div>Total Price</div>
+      </div>
       <div style={{ display: "none" }}>
         <ComponentToPrint
           cart={cartItems}

@@ -1,6 +1,6 @@
 .container {
-  min-height: 550px;
-  max-height: 550px;
+  min-height: 580px;
+  max-height:580px;
   display: flex;
   width: 60%;
   display: flex;
@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   font-size: 13px;
-  margin: 3rem 2rem 0 1rem;
+  margin: 1rem 2rem 0 1rem;
   padding: 30px 10px 10px 30px;
 }
 .cartProduct {
@@ -29,12 +29,12 @@
 }
 
 .productsList {
-  min-height: 250px;
-  max-height: 250px;
+  min-height: 230px;
+  max-height: 230px;
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 0px;
+  margin-bottom: 25px;
   overflow-x: hidden;
   overflow-y: auto;
 }

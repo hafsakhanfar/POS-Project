@@ -120,6 +120,8 @@ function ProductsPage() {
             dataName="products"
             reRenderTableData={reRenderTableData}
             EditableRow={EditableRow}
+            setData={setProducts}
+
           />
         )}
       </div>

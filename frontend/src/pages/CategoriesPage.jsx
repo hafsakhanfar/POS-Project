@@ -99,6 +99,8 @@ function CategoriesPage() {
             dataName="categories"
             reRenderTableData={reRenderTableData}
             EditableRow={EditableRow}
+            setData={setCategories}
+
           />
         )}
       </div>

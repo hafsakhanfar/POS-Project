@@ -8,7 +8,6 @@ import searchBox from "../assetsStayles/searchBox.module.css";
 import styles from "../style/PosPage.module.css";
 import Loading from "../layout/Loading";
 import loading from "../assetsStayles/loading.module.css";
-
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 function POSPage() {
   const [filteredData, setFilteredData] = useState([]);

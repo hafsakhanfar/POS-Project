@@ -1,17 +1,18 @@
 .container {
-  width: 100%;
+  width: 750px;
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   gap: 10px;
   margin: 0;
 }
 
 .categoryBox {
-  width: 100px;
+  min-width: 80px;
+  max-width: 80px;
   max-height: 70px;
   min-height: 70px;
   padding-top: 10px;
-  background-color:#F2C07B;
+  background-color: #f2c07b;
   text-align: center;
   justify-content: center;
   border: 1px;

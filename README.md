@@ -96,12 +96,9 @@ POS systems track inventory which is useful especially in businesses that sell p
 
 <h2>How to clone this project</h2>
 <ol>   
-<li> Above the list of files, click Code.</li> 
- <li> Copy the URL for the repository.</li>
+<li> Above the list of files, click Code and copy the URL for the repository.</li>
  <li> Open Git Bash. </li>
  <li> Type git clone, and then paste the URL you copied earlier.</li>
- <p> git clone " https://github.com/hafsakhanfar/POS-Project.git" <p>
- <li> Press Enter to create your local clone.<li>
  <li> Open it whit VSC and in backend directory<li>
  <li> Run --json-server --watch db.json --port 5000--</li>
  <li> Change directory to frontend by --cd frontend--</li>

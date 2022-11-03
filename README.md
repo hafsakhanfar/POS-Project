@@ -55,9 +55,11 @@ POS systems track inventory which is useful especially in businesses that sell p
 <hr>
 
 <h2>Links </h2>
+    
+ ![image](https://user-images.githubusercontent.com/104949238/199711040-ccd19f94-8061-460e-9b58-81b71ac1f3db.png)
 <a href="https://helix-statistic-99a.notion.site/POS-project-a2b0fc4f651744a98cc23236633f94ce">
-![image](https://user-images.githubusercontent.com/104949238/199711040-ccd19f94-8061-460e-9b58-81b71ac1f3db.png)
 </a>
+     
 
 
 
@@ -66,13 +68,13 @@ POS systems track inventory which is useful especially in businesses that sell p
 <ol>   
 <li>Above the list of files, click Code.</li>
  <li>Copy the URL for the repository.</li>
-  <li>Open Git Bash. </li>
-  <li>Type git clone, and then paste the URL you copied earlier.</li>
- <p> https://github.com/hafsakhanfar/POS-Project.git <p>
+ <li>Open Git Bash. </li>
+ <li>Type git clone, and then paste the URL you copied earlier.</li>
+ <p> git clone  https://github.com/hafsakhanfar/POS-Project.git <p>
  <li> Press Enter to create your local clone.<li>
  <li> Open it whit VSC and in backend directory<li>
-  <li>Run --json-server --watch db.json --port 5000--</li>
-   <li>Change directory to frontend by --cd frontend--</li>
+ <li>Run --json-server --watch db.json --port 5000--</li>
+ <li>Change directory to frontend by --cd frontend--</li>
   <li>Excute --npm start-- to start the projec</li>
 </ol>
 

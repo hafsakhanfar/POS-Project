@@ -85,7 +85,9 @@ POS systems track inventory which is useful especially in businesses that sell p
 <h2>Links </h2>
     
  ![image](https://user-images.githubusercontent.com/104949238/199711040-ccd19f94-8061-460e-9b58-81b71ac1f3db.png)
+    <p><p/>
 <a href="https://helix-statistic-99a.notion.site/POS-project-a2b0fc4f651744a98cc23236633f94ce">
+    Notion
 </a>
      
 

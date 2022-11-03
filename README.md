@@ -24,12 +24,11 @@ POS systems track inventory which is useful especially in businesses that sell p
 <h2>Technologies used </h2>
 
 
- <li >![151359683-6602ec17-a473-43a5-b7e7-866d8194c959](https://user-images.githubusercontent.com/104949238/199702844-004a5367-8db1-40e9-9e75-fe4f81f14bd2.svg) </li>
+ <li ><img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" width="40" height="40"/> </li>
     
-<li> ![logo-javascript-256](https://user-images.githubusercontent.com/104949238/199704267-ed18c0ca-7a8b-4d78-88f8-81f19105b7cf.png) </li>
-
-<p><a href="https://www.npmjs.com/package/react-to-print"> React-to-print<a/></p> 
-<p><a href="https://formik.org/">Formik<a/></p> 
+<li> <img src="https://user-images.githubusercontent.com/104949238/199704267-ed18c0ca-7a8b-4d78-88f8-81f19105b7cf.png" width="40" height="40"/> </li>
+<li><a href="https://www.npmjs.com/package/react-to-print"> React-to-print<a/></li> 
+<li><a href="https://formik.org/">Formik<a/></li> 
 
 
 <hr>
@@ -72,18 +71,18 @@ POS systems track inventory which is useful especially in businesses that sell p
 
 <h2>Links </h2>
     
-<li> ![image](https://user-images.githubusercontent.com/104949238/199711040-ccd19f94-8061-460e-9b58-81b71ac1f3db.png)
-    <p><p/> </li>
-<a href="https://helix-statistic-99a.notion.site/POS-project-a2b0fc4f651744a98cc23236633f94ce">
+<li ><img src="https://user-images.githubusercontent.com/104949238/199711040-ccd19f94-8061-460e-9b58-81b71ac1f3db.png" width="40" height="40"/> <a href="https://helix-statistic-99a.notion.site/POS-project-a2b0fc4f651744a98cc23236633f94ce">
     Notion
 </a>
-     
+  </li>
+
+    
 
 
 
 
 <h2>How to clone this project</h2>
-<ol>   
+<ul>   
 <li> Above the list of files, click Code and copy the URL for the repository.</li>
  <li> Open Git Bash. </li>
  <li> Type git clone, and then paste the URL you copied earlier.</li>
@@ -91,7 +90,7 @@ POS systems track inventory which is useful especially in businesses that sell p
  <li> Run --json-server --watch db.json --port 5000--</li>
  <li> Change directory to frontend by --cd frontend--</li>
  <li> Excute --npm start-- to start the projec</li>
-</ol>
+</ul>
 
   <hr>
   

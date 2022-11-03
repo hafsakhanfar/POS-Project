@@ -21,9 +21,11 @@ POS systems track inventory which is useful especially in businesses that sell p
 
 
 <h2>POS Pages </h2>
-![image](https://user-images.githubusercontent.com/104949238/199697223-435f3ad2-ac5b-44c3-8c70-479c522c4008.png)
 
-<p>categories page : This page has a table for all products categories that stored in the system DataBase, you can add a new category or delete one or edit it,<br> also you can search for category by name </p>
+![image](https://user-images.githubusercontent.com/104949238/199715050-24266943-2540-4a7f-988b-68ff7f55ef51.png)
+
+
+<p>categories page : This page has a table for all products categories that stored in the system DataBase, you can add a new category or delete one or edit it, also you can search for category by name </p>
 
 ![image](https://user-images.githubusercontent.com/104949238/199700316-d6e8c142-2c6e-464c-b19c-59fb4c67a646.png)
 
@@ -41,8 +43,11 @@ POS systems track inventory which is useful especially in businesses that sell p
 
 
 <h2>Technologies used </h2>
-<a href="https://beta.reactjs.org/"> ![151359683-6602ec17-a473-43a5-b7e7-866d8194c959](https://user-images.githubusercontent.com/104949238/199702844-004a5367-8db1-40e9-9e75-fe4f81f14bd2.svg)
-<a/> ![logo-javascript-256](https://user-images.githubusercontent.com/104949238/199704267-ed18c0ca-7a8b-4d78-88f8-81f19105b7cf.png)
+
+<a href="https://beta.reactjs.org/">
+![151359683-6602ec17-a473-43a5-b7e7-866d8194c959](https://user-images.githubusercontent.com/104949238/199702844-004a5367-8db1-40e9-9e75-fe4f81f14bd2.svg)
+<a/> 
+![logo-javascript-256](https://user-images.githubusercontent.com/104949238/199704267-ed18c0ca-7a8b-4d78-88f8-81f19105b7cf.png)
 <p><a href="https://www.npmjs.com/package/react-to-print"> React-to-print<a/></p> 
 <p><a href="https://formik.org/">Formik<a/></p> 
 
@@ -50,7 +55,8 @@ POS systems track inventory which is useful especially in businesses that sell p
 <hr>
 
 <h2>Links </h2>
-<a href="https://helix-statistic-99a.notion.site/POS-project-a2b0fc4f651744a98cc23236633f94ce"> ![image](https://user-images.githubusercontent.com/104949238/199711040-ccd19f94-8061-460e-9b58-81b71ac1f3db.png)
+<a href="https://helix-statistic-99a.notion.site/POS-project-a2b0fc4f651744a98cc23236633f94ce">
+![image](https://user-images.githubusercontent.com/104949238/199711040-ccd19f94-8061-460e-9b58-81b71ac1f3db.png)
 </a>
 
 

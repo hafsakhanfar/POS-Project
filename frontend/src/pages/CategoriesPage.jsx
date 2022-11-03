@@ -1,5 +1,5 @@
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import MainLayout from "../layout/MainLayout";
 import DynamicTable from "../layout/DynamicTable";
 import axios from "axios";
@@ -10,9 +10,10 @@ import AddFormik from "../formik/AddCategoryFormik";
 import button from "../assetsStayles/addButton.module.css";
 import searchBox from "../assetsStayles/searchBox.module.css";
 import Loading from "../layout/Loading";
+import { Context } from "../Context.js";
 
 function CategoriesPage() {
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useContext(Context);
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [searchInput, setSearchInput] = useState("");
@@ -22,7 +23,9 @@ function CategoriesPage() {
     const result = await axios.get("categories");
     setCategories(await result.data);
     setFilteredData(await result.data);
-    setTimeout(()=>{setIsLoading(false)}, 1000);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -100,7 +103,6 @@ function CategoriesPage() {
             reRenderTableData={reRenderTableData}
             EditableRow={EditableRow}
             setData={setCategories}
-
           />
         )}
       </div>

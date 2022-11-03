@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import MainLayout from "../layout/MainLayout";
 import axios from "axios";
 import ProductsContainer from "../POSComponents/ProductsContainer";
@@ -9,9 +9,11 @@ import styles from "../style/PosPage.module.css";
 import Loading from "../layout/Loading";
 import loading from "../assetsStayles/loading.module.css";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { Context } from "../Context.js";
+
 function POSPage() {
   const [filteredData, setFilteredData] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useContext(Context);
   const [products, setProducts] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -74,7 +76,6 @@ function POSPage() {
 
   useEffect(() => {
     fetchProducts().catch((err) => console.log(err));
-    fetchCategories().catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
@@ -108,11 +109,6 @@ function POSPage() {
       setFilteredData(data);
     }
   }, [searchInput, filterValue, products]);
-
-  const fetchCategories = async () => {
-    const result = await axios.get("categories");
-    setCategories(await result.data);
-  };
 
   return (
     <MainLayout>

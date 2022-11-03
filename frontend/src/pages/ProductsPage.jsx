@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import MainLayout from "../layout/MainLayout";
 import DynamicTable from "../layout/DynamicTable";
 import axios from "axios";
@@ -9,6 +9,7 @@ import button from "../assetsStayles/addButton.module.css";
 import AddFormik from "../formik/AddProductFormik";
 import searchBox from "../assetsStayles/searchBox.module.css";
 import Loading from "../layout/Loading";
+import { Context } from "../Context.js";
 
 function ProductsPage() {
   const [products, setProducts] = useState([]);
@@ -16,14 +17,16 @@ function ProductsPage() {
   const [showModal, setShowModal] = useState(false);
   const [searchInput, setSearchInput] = useState("");
   const [filteredData, setFilteredData] = useState([]);
-  const [categories, setCategories] = useState([]);
+  const [categories, setCategories] = useContext(Context);
 
   const fetchProducts = async () => {
     setIsLoading(true);
     const result = await axios.get("products");
     setProducts(await result.data);
     setFilteredData(await result.data);
-    setTimeout(()=>{setIsLoading(false)}, 1000);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -59,12 +62,8 @@ function ProductsPage() {
     fetchProducts();
   };
 
-  const fetchCategories = async () => {
-    const result = await axios.get("categories");
-    setCategories(await result.data);
-  };
   const handleAddClick = async () => {
-    fetchCategories().then(toggleShowModal());
+    toggleShowModal();
   };
 
   return (
@@ -121,7 +120,6 @@ function ProductsPage() {
             reRenderTableData={reRenderTableData}
             EditableRow={EditableRow}
             setData={setProducts}
-
           />
         )}
       </div>
